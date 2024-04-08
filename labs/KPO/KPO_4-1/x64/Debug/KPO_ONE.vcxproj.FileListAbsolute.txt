@@ -1,2 +1,0 @@
-C:\Users\stude\OneDrive\Рабочий стол\Всякое\project\KPO_ONE\x64\Debug\KPO_ONE.exe
-C:\git\labs\KPO\KPO_ONE\x64\Debug\KPO_ONE.exe
