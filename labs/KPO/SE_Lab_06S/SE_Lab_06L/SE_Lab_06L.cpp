@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Dictionary.h"
+#include "C:\git\labs\labs\KPO\SE_Lab_06S\SE_Lab_06L\Dictionary.h"
 using namespace std;
 using namespace Dictionary;
 
@@ -40,14 +40,14 @@ namespace Dictionary
         inst.size += 1;
     }
 
-    Entry GetEntry(Instance inst, int id)
+    Entry GetEntry(Instance& inst, int id)
     {
         for (int i = 0; i < inst.size; i++)
         {
             if (id == inst.dictionary[i].id)
             {
 
-                cout << "-------------------------" << endl << inst.dictionary[i].id << " " << inst.dictionary[i].name << endl;
+ 
                 return inst.dictionary[i];
             }
         }

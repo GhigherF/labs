@@ -1,10 +1,14 @@
-﻿#include <iostream>
-#include "C:\git\labs\labs\KPO\SE_Lab_06S\SE_Lab_06L\Dictionary.h"
+﻿#include "C:\git\labs\labs\KPO\SE_Lab_06S\SE_Lab_06L\Dictionary.h"
+#include <iostream>
+#include <Windows.h>
+#pragma  comment(lib,"C:/git/labs/labs/KPO/SE_Lab_06S/x64/Debug/SE_Lab_06L.lib")
 using namespace Dictionary;
 using namespace std;
+
 int main()
 {
-	setlocale(LC_ALL, "rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	try
 	{
 		Instance d1 = Create("Преподаватели", 5);
@@ -23,7 +27,7 @@ int main()
 		AddEntry(d2, s1);
 		AddEntry(d2, s2);
 		AddEntry(d2, s3);
-		Entry newentry3 = { 3,"" };
+		Entry newentry3 = { 3,"Николаев" };
 		UpdEntry(d2, 3, newentry3);
 		Print(d2);
 		Delete(d1);

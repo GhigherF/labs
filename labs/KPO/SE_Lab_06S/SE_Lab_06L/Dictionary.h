@@ -11,7 +11,7 @@
 #define THROW06 "ErORr"
 #define THROW07 "ErORr"
 #define THROW08 "ErORr"
-
+//Лютое изменение
 namespace Dictionary
 {
 	struct Entry
