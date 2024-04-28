@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        .slider-container {
+            position: relative;
+            width:40vw;
+            height:70vh;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition:0.5s ease;  
+              
+        }
+
+        .slider img {
+            width: 80%;
+            height: auto;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+          
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right:8vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="images\beautiful_coat.jpg" alt="Image 1">
+            <img src="images\beautiful_coat.jpg" alt="Image 1">
+            <img src="images\beautiful_coat.jpg" alt="Image 1">
+        </div>
+        <button class="prev" onclick="prevSlide()";>&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <script>
+        let slideIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slider img');
+            if (index >= slides.length) {
+                slideIndex = 0;
+            } else if (index < 0) {
+                slideIndex = slides.length - 1;
+            }
+
+            slides.forEach((slide) => {
+                slide.style.display = 'none';
+            });
+
+            slides[slideIndex].style.display = 'block';
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            
+            showSlide(slideIndex);
+        }
+
+        // Показываем первый слайд при загрузке страницы
+        showSlide(slideIndex);
+    </script>
+</body>
+</html>

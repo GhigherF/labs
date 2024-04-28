@@ -1,0 +1,483 @@
+@charset "UTF-8";
+@media (min-width: 480px) and (max-width: 1920px) {
+  html {
+    font-size: calc(5px + 15 * (100vw - 480px) / 1440);
+  }
+}
+header {
+  height: 2rem;
+  width: 100%;
+  background-color: #CB8A58;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #F0E5DD;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article {
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 7rem;
+}
+article img {
+  display: none;
+}
+
+article div {
+  width: 19%;
+  left: 70%;
+  display: block;
+  font-size: 1.8rem;
+  position: absolute;
+}
+
+.dropdown-content {
+  display: none;
+  width: 25%;
+  height: auto;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+div[class=exception] {
+  width: 10%;
+  background-color: red;
+}
+
+.header_fixed {
+  background-color: whitesmoke;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 2px 50px;
+}
+
+h1 {
+  text-decoration: none;
+  display: inline;
+  font-size: 7em;
+  width: 2.5rem;
+  height: 0.93rem;
+  margin-bottom: 0.2rem;
+  margin-left: 10%;
+  font-family: Kunstler Script;
+  margin-right: 35%;
+  font-weight: lighter;
+  color: #B29F91;
+}
+
+a {
+  text-decoration: none;
+  margin-right: 4%;
+}
+
+h3 {
+  font-size: 2rem;
+  font-family: Monotype Corsiva;
+  color: #B29F91;
+  display: inline;
+  margin-right: 5%;
+}
+
+h2 {
+  margin: 0;
+  padding-top: 0.2rem;
+}
+
+h3:last-child {
+  margin: 0;
+}
+
+hr {
+  margin-top: -1.2rem;
+  padding: 0;
+  border: 0.1em solid #562B1A;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+section {
+  margin-bottom: 2%;
+  width: 100%;
+  height: 3.6rem;
+  background-color: #627281;
+  text-align: center;
+  font-size: 1.7rem;
+  font-family: Monotype Corsiva;
+  color: #B29F91;
+  vertical-align: middle;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 88%;
+  height: auto;
+  margin-right: 1%;
+}
+
+figure div {
+  background-color: #F0E5DD;
+}
+
+figcaption {
+  opacity: 0;
+}
+
+figure:hover figcaption {
+  transition: 0.3s;
+  opacity: 1;
+}
+
+h4 {
+  color: #627281;
+  font-family: Monotype Corsiva;
+  text-align: center;
+}
+
+main p {
+  color: #627281;
+  position: relative;
+  bottom: 1.5rem;
+  font-family: Kunstler Script;
+  font-size: 2rem;
+  height: 0.8rem;
+  width: auto;
+}
+
+main button {
+  position: relative;
+  margin-left: 3.5rem;
+  width: 45%;
+  bottom: -0.2rem;
+  border: 0;
+  color: #562B1A;
+  background-color: #CB8A58;
+  font-family: Monotype Corsiva;
+  font-size: 1.2rem;
+}
+
+main button b {
+  width: 110%;
+  padding-left: -2rem;
+}
+
+aside {
+  height: auto;
+  width: 10%;
+}
+
+figure {
+  margin: 3%;
+  margin-top: 0;
+  padding: 2%;
+  width: 15%;
+  height: 7%;
+}
+
+figcaption {
+  letter-spacing: 0.05rem;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  width: 100%;
+  height: 20rem;
+  background-color: #CB8A58;
+}
+
+aside hr {
+  padding-top: 10rem;
+  width: 0;
+  border: 0.1rem solid #562B1A;
+  height: 17rem;
+  display: inline;
+  margin: 0;
+  position: absolute;
+}
+
+aside h4 {
+  color: #B29F91;
+  opacity: 52%;
+  margin-top: 0.2rem;
+  margin-bottom: 0.3rem;
+  margin-left: 0.4rem;
+  font-family: Monotype Corsiva;
+  font-size: 1.7rem;
+  font-weight: normal;
+}
+
+aside h4:first-child {
+  margin-top: 4rem;
+}
+
+aside label {
+  display: block;
+}
+
+aside label label {
+  padding-top: 0;
+  margin-left: 2.5rem;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  font-family: Monotype Corsiva;
+  color: #B29F91;
+}
+
+label div input {
+  display: none;
+}
+
+label div span {
+  position: absolute;
+  text-align: center;
+  margin-left: 1rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  border: 1px solid gray;
+  display: inline-block;
+  background-color: #FFF;
+  border-radius: 0.25rem;
+}
+
+[type=checkbox]:checked + span:before {
+  position: absolute;
+  content: "✔";
+  font-size: 1.2rem;
+  left: 0.2rem;
+  top: -20%;
+  font-weight: bold;
+  color: #627281;
+}
+
+label div {
+  vertical-align: text-top;
+}
+
+/* Эффект оверлея с черным фоном */
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9); /* Черный цвет с небольшой прозрачностью */
+}
+
+/* Кнопка закрытия */
+.overlay .closebtn {
+  position: absolute;
+  top: 1.5vh;
+  right: 2vw;
+  font-size: 4rem;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+.overlay-content {
+  display: block;
+  width: 90vw;
+  height: 90vh;
+  background-color: whitesmoke;
+  margin-left: 3vw;
+  margin-top: 4vh;
+}
+.overlay-content button {
+  position: absolute;
+  margin-left: 3.5vw;
+  width: 10vw;
+  height: 5vh;
+  right: 10vw;
+  top: 82vh;
+  border: 0;
+  color: #562B1A;
+  background-color: #CB8A58;
+  font-family: Monotype Corsiva;
+  font-size: 2rem;
+}
+
+.img {
+  float: left;
+  width: 30%;
+  height: 90%;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.info {
+  float: left;
+  width: 52%;
+  height: 70%;
+  border: 2px solid black;
+  margin: 5%;
+}
+
+.form {
+  width: 50%;
+  height: 40%;
+  border: 2px solid black;
+  margin: 5%;
+}
+.form input {
+  display: block;
+  margin-top: 2.6vh;
+  margin-left: 1.8vw;
+  width: 20vw;
+  height: 5vh;
+  border-radius: 0.7rem;
+}
+
+.description {
+  color: #627281;
+  font-family: Monotype Corsiva;
+  width: 90%;
+  height: 40%;
+  border: 2px solid black;
+  margin: 5%;
+}
+.description b {
+  display: block;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  header {
+    font-size: 5vw;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-style: italic;
+    height: 4vh;
+  }
+  article {
+    height: 5vh;
+    font-size: 1vw;
+    margin: 0;
+    letter-spacing: 2vw;
+    text-align: center;
+    padding: 0;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-style: italic;
+  }
+  article hr {
+    display: none;
+  }
+  article img {
+    float: left;
+    margin-left: 1vw;
+    display: inline;
+    width: 7vw;
+    height: 4vh;
+    margin-top: 0.5vh;
+  }
+  h3, h4, .dropdown-content {
+    display: none;
+  }
+  h1 {
+    display: inline;
+    margin: 0;
+    margin-left: 10vw;
+    width: 100%;
+    text-align: center;
+  }
+  section {
+    height: 5vh;
+    font-size: 5vw;
+  }
+  aside {
+    display: none;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  main figure {
+    width: 100%;
+    height: 60vh;
+  }
+  main div img {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  main figcaption {
+    width: 100%;
+    height: 7vh;
+    position: relative;
+    background-color: whitesmoke;
+  }
+  main button {
+    width: 70vw;
+    height: 5vh;
+    margin-top: 1.5vh;
+    margin-left: 10vw;
+    font-size: 7vw;
+  }
+}
+.slider-container {
+  position: relative;
+  width: 40vw;
+  height: 70vh;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider {
+  width: 30vw;
+  height: 80vh;
+  display: flex;
+}
+
+.slider img {
+  position: relative;
+  left: 10vw;
+  display: block;
+  width: 7%;
+  height: 8%;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 27vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.prev {
+  left: 10vw;
+  padding: 2vh;
+  font-size: 3em;
+}
+
+.next {
+  right: 9vw;
+  padding: 2vh;
+  font-size: 3em;
+}/*# sourceMappingURL=Style.css.map */

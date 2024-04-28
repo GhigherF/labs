@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet version="1.0" type="text/xsl" href="Autumn-collection.xsl"?>
+
+
+
+
+<info>
+
+<block>
+<id>c1</id>
+<sex>male</sex>
+<description>1</description>
+<material></material>
+<color></color>
+<src>images\Peaky_blinders.jpg</src>
+<name>Роскошное пальто итальянской мафии</name>
+<cost>270$</cost>
+
+</block>
+
+<block>
+<id>c2</id>
+<sex>female</sex>
+<description>2</description>
+<material></material>
+<color></color>
+<name>Пальто "Снежная королева"</name>
+<cost>430$</cost>
+<src>images\white_woman_coat.jpg</src>
+</block>
+
+<block>
+<sex>male</sex>
+<material></material>
+<description>3</description>
+<color></color>
+<id>c3</id>
+<name>Пальто "Осень"</name>
+<cost>390$</cost>
+<src>images\brown_coat_men.jpg</src>
+</block>
+
+<block>
+<id>c4</id>
+<description>4</description>
+<sex>female</sex>
+<material></material>
+<color></color>
+<name>Пальто "Осенняя листва"</name>
+<cost>420$</cost>
+<src>images\brown_woman_coat.jpg</src>
+</block>
+
+<block>
+<id>c5</id>
+<description>5</description>
+<sex>female</sex>
+<material></material>
+<color></color>
+<name>Длинное стильное пальто</name>
+<cost>380$</cost>
+<src>images\gray_women_coat.jpg</src>
+</block>
+
+<block>
+<description>6</description>
+<id>c6</id>
+<sex>female</sex>
+<material></material>
+<color></color>
+<name>Оверсайз пальто последний писк моды</name>
+<cost>320$</cost>
+<src>images\realy_bif_gray_woman_coat.jpg</src>
+</block>
+
+
+
+<block>
+<id>c7</id>
+<description>7</description>
+<sex>male</sex>
+<material></material>
+<color></color>
+<name>Классическое мужское пальто</name>
+<cost>220$</cost>
+<src>images\black_coat_men.jpg</src>
+</block>
+
+<block>
+<id>c8</id>
+<description>8</description>
+<sex>female</sex>
+<material></material>
+<color></color>
+<name>Модельное влюбляющее пальто</name>
+<cost>280$</cost>
+<src>images\beautiful_coat.jpg</src>
+</block>
+
+<block>
+<id>c9</id>
+<description>9</description>
+<sex>female</sex>
+<material></material>
+<color></color>
+<name>Броское яркое пальто</name>
+<cost>552$</cost>
+<src>images\green_women_coat.jpg</src>
+</block>
+
+
+<block>
+<id>c10</id>
+<description>10</description>
+<sex>male</sex>
+<material></material>
+<color></color>
+<name>Деловое пальто для делового мужчины</name>
+<cost>315$</cost>
+<src>images\brown_men_coat.jpg</src>
+</block>
+
+
+<block>
+<id>c11</id>
+<sex>male</sex>
+<description>11</description>
+<material></material>
+<color></color>
+<name>Голубое пальто для самого гейского гея</name>
+<cost>490$</cost>
+<src>images\blue_men_coat.jpg</src>
+</block>
+
+<block>
+<sex>female</sex>
+<description>12</description>
+<material></material>
+<color></color>
+<id>c12</id>
+<src>images\my_summer_car.jpg</src>
+<name>Пальто "Солнечная улыбка"</name>
+<cost>397$</cost>
+</block>
+
+<block>
+<id>c13</id>
+<description>13</description>
+<sex>male</sex>
+<material></material>
+<color></color>
+<name>Выделяющееся пальто для настоящих мачо</name>
+<cost>140$</cost>
+<src>images\green_man_coaat.jpg</src>
+</block>
+
+
+<block>
+<id>c14</id>
+<description>14</description>
+<sex>male</sex>
+<material></material>
+<color></color>
+<name>Пальто "Грозовой фронт"</name>
+<cost>462$</cost>
+<src>images\пкфн_ьфт.jpg</src>
+</block>
+
+<block>
+<sex>female</sex>
+<material></material>
+<color></color>
+<description>15</description>
+<id>c15</id>
+<name>Стильное узорчатое пальто</name>
+<cost>790$</cost>
+<src>images\in_cage.jpg</src>
+</block>
+
+<block>
+<id>c16</id>
+<description>16</description>
+<sex>male</sex>
+<material></material>
+<color></color>
+<name>Пальто "Жумапе да бомбоклат"</name>
+<cost>3$</cost>
+<src>images\green_coat.jpg</src>
+</block>
+
+
+
+</info>
+
