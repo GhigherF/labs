@@ -5,7 +5,7 @@ function  basicOperation(operation,value1,value2)
     {
         case '+' :   
         {
-       return value1+value2; 
+       return +(value1)+(+value2); 
         }
         case '-' :   
         {
@@ -21,7 +21,7 @@ function  basicOperation(operation,value1,value2)
         }
     }
 }
-let  task1  =   basicOperation( '*' , 5,10);  
+let  task1  =   basicOperation( '+' , '5','10');  
 console.log("task 1:" + task1);
 //2
 function cube (n)
