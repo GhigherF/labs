@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Metallica-One")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("TWOпак")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9cdab3646b6dc56d08345c3eff7b369bb11fca8")]
-[assembly: System.Reflection.AssemblyProductAttribute("Metallica-One")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Metallica-One")]
+[assembly: System.Reflection.AssemblyProductAttribute("TWOпак")]
+[assembly: System.Reflection.AssemblyTitleAttribute("TWOпак")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
