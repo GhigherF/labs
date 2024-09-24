@@ -3,31 +3,6 @@
 #include <vector>
 using namespace std;
 
-bool check(int a, vector <int> b, vector <int> c)
-{
-	bool flag = false;
-	for (int i = 0; i < b.size(); i++)
-	{
-		if (a == b[i]) flag = true;
-	}
-	for (int i = 0; i < c.size(); i++)
-	{
-		if (a == c[i]) flag = true;
-	}
-	return flag;
-}
-
-vector <int> pop_front(vector <int>& arr)
-{
-	vector <int> a;
-	for (int i = 1; i < arr.size(); i++)
-	{
-		a.push_back(arr[i]);
-	}
-	return a;
-}
-
-
 void main()
 {
 	int startpoint;
@@ -48,10 +23,10 @@ void main()
 	cout << "Вершина:";
 	cin >>a;
 	startpoint = int(a) - 65;
-	int visited[8];
-	int min[8];
+	int visited[9];
+	int min[9];
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 9; i++)
 	{
 		min[i] = 99999;
 		visited[i] = 1;
@@ -61,7 +36,7 @@ void main()
 	{
 		index = 99999;
 		value = 99999;
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < 9; i++)
 		{
 			if ((visited[i] == 1) && (min[i] < value))
 			{
@@ -71,19 +46,18 @@ void main()
 		}
 		if (index != 99999)
 		{
-			for (int i = 0; i < 8; i++)
+			for (int i = 0; i < 9; i++)
 			{
 				if (matrix[index][i] > 0)
 				{
 					temp = value + matrix[index][i];
 					if (temp < min[i]) min[i] = temp;
-					cout << temp <<'\n';
 				}
 			}
 			visited[index] = 0;
 		}
 	}
 	printf("\nКратчайшие расстояния до вершин: \n");
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 9; i++)
 		printf("%5d ", min[i]);
 }
