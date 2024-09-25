@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FST.cpp" />
     <ClCompile Include="KPO_16.cpp" />
   </ItemGroup>
   <ItemGroup>
