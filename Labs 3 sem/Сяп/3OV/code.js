@@ -1,32 +1,18 @@
 //              1/2
-function obxod (array,arr2)
-{
-    if(Array.isArray(array))
-    {
-            for(let j=0;j<array.length;j++)
-            {
-                if (Array.isArray(array[j]))
-                {
-                    obxod(array[j],arr2);
-                }
-                else 
-                {
-                    arr2.push(array[j]);
-                }
-            }
-    }
-    else 
-    {
-        arr2.push(array);
-    }
-}
 let arr1=[1,[1,2,[3,4],[5,6]],[2,[4,5],4]];
-let arr2=[];
-for(let i=0;i<arr1.length;i++)
-{
-    obxod(arr1[i],arr2);
-}
-console.log(String(arr2));
+
+let arr2 = arr1.reduce((acc, item) => {
+    function obxod(array) {
+        if (Array.isArray(array)) {
+            return array.reduce((subAcc, subItem) => subAcc.concat(obxod(subItem)), []);
+        } else {
+            return array;
+        }
+    }
+    return acc.concat(obxod(item));
+}, []);
+
+console.log(arr2);
 ////  3
 let pivo=
 {
