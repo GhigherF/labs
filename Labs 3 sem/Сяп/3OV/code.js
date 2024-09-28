@@ -66,3 +66,7 @@ for(let j=0;j<count;j++)
 console.log(gap+pyramide);
 count+=2;
 }
+
+let gg=["Abc","CDEF"];
+let pp=gg.map(gg=>gg.length);
+console.log(pp);
