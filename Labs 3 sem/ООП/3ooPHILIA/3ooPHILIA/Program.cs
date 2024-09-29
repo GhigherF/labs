@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using lab3;
+using System.Buffers;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization.Formatters;
 using System.Security.Cryptography.X509Certificates;
@@ -15,6 +16,14 @@ namespace lab3
                 str[i]+='.';
             }
         }
+        public static void dot(this Set set)
+        {
+            for (int i = 0; i<set.length; i++)
+            {
+                set.sValues[i]+='.';
+            }
+        }
+
     }
    
     public class Set
@@ -474,6 +483,7 @@ static class main
     static void Main()
     {
         int?[] a = { 1, 2, 1, 1, 5, 4, 1 };
+        string?[] ex= { "To", "Hell", "And", "Back" };
         int?[] zeroBithes = { 0, 5, 6, 0, 2, 4, 0, 1, 0, 0, 4 };
         int?[] gg = { 11, 5, 2, 3, 4, 6, 7 };
         string?[] b = { "a", "b", "c" };
@@ -487,6 +497,7 @@ static class main
         bool?[] e = { true, false,true,true};
         var temp = a;
         var temptemp = a;
+        Set example = new Set(ex);
         Set fucingLast = new Set(fuckinLast);
         Set tmptmp = new Set(a);
         Set zeroBithees = new Set(zeroBithes);
@@ -532,6 +543,9 @@ static class main
         {
             Console.Write(fuckinLast[i]);
         }
+        Console.WriteLine();
+        example.dot();
+        example.Showk();
 
     }
 }

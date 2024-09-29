@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stude\\OneDrive\\Рабочий стол\\Labs 3 sem\\ООП\\TWOпак\\TWOпак\\TWOпак.csproj": {}
+    "C:\\Users\\stude\\OneDrive\\Рабочий стол\\Labs\\labs\\Labs 3 sem\\ООП\\TWOпак\\TWOпак\\TWOпак.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stude\\OneDrive\\Рабочий стол\\Labs 3 sem\\ООП\\TWOпак\\TWOпак\\TWOпак.csproj": {
+    "C:\\Users\\stude\\OneDrive\\Рабочий стол\\Labs\\labs\\Labs 3 sem\\ООП\\TWOпак\\TWOпак\\TWOпак.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stude\\OneDrive\\Рабочий стол\\Labs 3 sem\\ООП\\TWOпак\\TWOпак\\TWOпак.csproj",
+        "projectUniqueName": "C:\\Users\\stude\\OneDrive\\Рабочий стол\\Labs\\labs\\Labs 3 sem\\ООП\\TWOпак\\TWOпак\\TWOпак.csproj",
         "projectName": "TWOпак",
-        "projectPath": "C:\\Users\\stude\\OneDrive\\Рабочий стол\\Labs 3 sem\\ООП\\TWOпак\\TWOпак\\TWOпак.csproj",
+        "projectPath": "C:\\Users\\stude\\OneDrive\\Рабочий стол\\Labs\\labs\\Labs 3 sem\\ООП\\TWOпак\\TWOпак\\TWOпак.csproj",
         "packagesPath": "C:\\Users\\stude\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stude\\OneDrive\\Рабочий стол\\Labs 3 sem\\ООП\\TWOпак\\TWOпак\\obj\\",
+        "outputPath": "C:\\Users\\stude\\OneDrive\\Рабочий стол\\Labs\\labs\\Labs 3 sem\\ООП\\TWOпак\\TWOпак\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
