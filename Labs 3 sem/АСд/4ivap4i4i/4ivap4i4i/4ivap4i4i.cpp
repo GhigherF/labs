@@ -1,9 +1,20 @@
 ﻿#include <iostream>
+#include <windows.h>
 using namespace std;
-
+	void printPath(int start, int end, int point[6][6])
+	{
+		if (point[start][end] == end + 1)
+		{
+			cout << end + 1<<" ";
+			return;
+		}
+		printPath(start, point[start][end] - 1, point);
+		cout << end + 1<< " ";
+	}
 
 void main()
 {
+	SetConsoleOutputCP(1251);
 	int values[6][6] = { 0,28,21,59,12,27,
 					  7,0,24,9999,21,9,
 					  9,32,0,13,11,9999,
@@ -11,7 +22,7 @@ void main()
 					  14,13,15,10,0,22,
 					  15,18,9999,9999,6,0 };
 
-	int point[6][6] = { 0,2,3,4,5,6,
+	int point[6][6] ={0,2,3,4,5,6,
 					 1,0,3,4,5,6,
 					 1,2,0,4,5,6,
 					 1,2,3,0,5,6,
@@ -54,4 +65,24 @@ void main()
 		}
 		cout << "\n";
 	}
+
+
+
+	int start, end,a,b;
+	cout << "\nВведите начальную вершину (1-6): ";
+	cin >> start;
+	a = start;
+	cout << "Введите конечную вершину (1-6): ";
+	cin >> end;
+	b = start;
+	if (start < 1 || start > 6 || end < 1 || end > 6) {
+		cout << "Некорректные вершины!" << endl;
+		return;
+	}
+	cout << "Расстояние:"<<values[start - 1][end - 1] << endl;
+	cout << "\nКратчайший путь: ";
+	cout << start << " ";
+	printPath(start - 1, end - 1, point);
+	cout << endl;
+	
 }
