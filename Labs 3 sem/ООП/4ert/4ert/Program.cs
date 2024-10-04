@@ -3,6 +3,15 @@ using static lab4.Boquet.Plant.Bush;
 
 namespace lab4
 {
+    public class Printer
+    {
+        public void IAmPrinting(Need gg)
+        {
+            if (gg is Cactus) Console.WriteLine("Cactus---"+gg.ToString());
+            else if (gg is lab4.Boquet.Plant.Flower.Rose) Console.WriteLine("Rose----"+gg.ToString());
+            else if (gg is lab4.Boquet.Plant.Flower.Gladioulus) Console.WriteLine("Gladiolus----"+gg.ToString());
+        }
+    }
    public abstract class Need
     {
         public int a = 5;
@@ -71,7 +80,7 @@ namespace lab4
             }
             public class Flower
             { 
-              public  class Rose:IFlower
+              public  class Rose:Need,IFlower
                 {
                     public void ToString(Rose arr)
                     {
@@ -86,7 +95,7 @@ namespace lab4
                     int price = 1000;
                     int beauty = 100;
                 }
-                public class Gladioulus:IFlower
+                public class Gladioulus:Need,IFlower
                 {
                     public void ToString(Gladioulus arr)
                     {
@@ -119,24 +128,33 @@ namespace lab4
       public static void Main()
         {
 
-          //  Boquet.Plant.Bush.Cactus test1 = new Boquet.Plant.Bush.Cactus();
-          //  test1.ToString(test1);
-          //Console.WriteLine(test1.GetHashCode(test1));
-          //  Console.WriteLine(test1.GetType(test1));
-          //  Boquet.Plant.Bush.Cactus test2 = new Boquet.Plant.Bush.Cactus();
-          //  Console.WriteLine(test1.Equals(test1, test2));
-          Boquet.Plant.Bush.Cactus temp1=new Boquet.Plant.Bush.Cactus();
-          Boquet.Plant.Flower.Rose temp2 = new Boquet.Plant.Flower.Rose();
-            Console.WriteLine(temp1 is IFlower);
-            Console.WriteLine(temp1 is ITest);
-            ITest gg=temp1 as ITest;
-            Console.WriteLine(gg is ITest);
+            //  Boquet.Plant.Bush.Cactus test1 = new Boquet.Plant.Bush.Cactus();
+            //  test1.ToString(test1);
+            //Console.WriteLine(test1.GetHashCode(test1));
+            //  Console.WriteLine(test1.GetType(test1));
+            //  Boquet.Plant.Bush.Cactus test2 = new Boquet.Plant.Bush.Cactus();
+            //  Console.WriteLine(test1.Equals(test1, test2));
+            //Boquet.Plant.Bush.Cactus temp1=new Boquet.Plant.Bush.Cactus();
+            //Boquet.Plant.Flower.Rose temp2 = new Boquet.Plant.Flower.Rose();
+            //  Console.WriteLine(temp1 is IFlower);
+            //  Console.WriteLine(temp1 is ITest);
+            //  ITest gg=temp1 as ITest;
+            //  Console.WriteLine(gg is ITest);
             //Console.WriteLine(temp1.a);
             //  temp2.name="rose";
             //temp1.Cool();
             //  IFlower temp=temp1;
             //  temp.Cool();
-          //  temp2.Cool();
+            //  temp2.Cool();
+            Need tst1 = new Boquet.Plant.Bush.Cactus();
+            Need tst2 = new Boquet.Plant.Flower.Rose();
+            Need tst3=new Boquet.Plant.Flower.Gladioulus();
+            Need[] arr = {tst1,tst2,tst3};
+            Printer gg= new Printer();
+            foreach (var i in arr)
+            {
+                gg.IAmPrinting(i);
+            }
 
         }
     }
