@@ -43,7 +43,7 @@ namespace lab4
             public class Bush//куст
             {
              
-             public class Cactus:Need,IFlower//Test
+             public class Cactus:Need,IFlower//,Test
                 {
                     public void ToString(Cactus arr)
                     {
@@ -121,7 +121,22 @@ namespace lab4
             int density2 = 450;
         }
     }
-
+   public class gg
+    {
+        private int a;
+            public int b
+        {
+           get
+            {
+               return a; 
+            }
+           set
+            {
+                a=value;
+            }
+        }
+       
+    }
 
     public static class main
     { 
@@ -155,7 +170,8 @@ namespace lab4
             {
                 gg.IAmPrinting(i);
             }
-
+            gg b = new gg();
+            Console.WriteLine(b.b);
         }
     }
     
