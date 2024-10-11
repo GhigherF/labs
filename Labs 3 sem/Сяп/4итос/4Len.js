@@ -137,8 +137,8 @@ for(key of map)
 {
     console.log(key);
 }
-//let gg=new Map(map) ;
-//mReplace(gg,1,228228);
+let gg=new Map(map) ;
+mReplace(gg,1,228228);
 //4
 let cache = new WeakMap();
 
