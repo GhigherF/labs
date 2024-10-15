@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include <unordered_map>
+#include <map>
 #include <string>
 #include <windows.h>
 #include <queue>
@@ -31,7 +31,7 @@ Element* newLeaf(char letter, int frequency, Element* left, Element* right) {
 }
 
 
-void encode(Element* root, string str, unordered_map<char, string>& code) {
+void encode(Element* root, string str, map<char, string>& code) {
     if (root == nullptr) return;
 
 
@@ -55,7 +55,7 @@ int main() {
     cin.getline(str, 999);
 
 
-    unordered_map<char, int> freq;
+    map<char, int> freq;
     for (char ch : str) {
         if (int(ch) < 0 || int(ch) > 70) {
             freq[ch]++;
@@ -88,7 +88,7 @@ int main() {
 
 
     Element* root = qu.top();
-    unordered_map<char, string> code;
+    map<char, string> code;
 
     encode(root, "", code);
 
