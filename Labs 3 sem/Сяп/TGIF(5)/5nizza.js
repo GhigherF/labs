@@ -61,6 +61,7 @@ let coordinates={x:10,y:10};
 function *genZ(temp)
 {
  yield  genV(temp);
+ return;
 }
 
 
@@ -99,7 +100,6 @@ for(let i=0;i<10;i++)
     console.log(genZ(directions[i]).next());
 }
 //4
-console.log(window.directions);
 let gg=5;
 window.gg=2;
 console.log(gg)

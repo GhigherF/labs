@@ -1,9 +1,35 @@
-﻿using System.Xml.Serialization;
+﻿using System.Diagnostics;
+using System.Reflection;
+using System.Xml.Serialization;
 using static lab4.Boquet.Plant.Bush;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace lab4
 {
-    public class Controller<T>
+    public class Testik1 : NullReferenceException
+    {
+        public static void WTF<T>(T a)
+        {
+           // Debug.Assert(false,"SSSHHHIIITTT!!!!");
+            if (a==null)
+            {
+                throw new Exception(typeof(T)+" is NULL");
+            }
+        }
+    }
+    public class Testik2 : Exception
+    {
+        public Testik2(string message) : base(message) { }
+    }
+
+public class Testik3 : ArgumentException
+{
+  public Testik3(string message) : base(message) { }
+}
+
+
+
+public class Controller<T>
     {
         public void find(Listik<Cactus> temp1, Listik<Boquet.Plant.Flower.Rose> temp2, Listik<Boquet.Plant.Flower.Gladioulus> temp3,string match)
         {
@@ -232,7 +258,7 @@ namespace lab4
                       return arr.GetType();
                     }
                    public bool Equals(Cactus arr,Cactus arr2)
-                    {
+                    { 
                         return(arr.price==arr2.price&&arr.beauty==arr2.beauty);
                     }
                    public int price = 200;
@@ -288,7 +314,7 @@ namespace lab4
     /// <summary>
     /// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /// </summary>
-   public partial class gg
+   internal partial class gg
     {
         private int a = 5;       
     }
@@ -296,16 +322,15 @@ namespace lab4
     /// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /// </summary>
     public static class main
-    { 
-      public static void Main()
+    {
+        public static void Main()
         {
 
-            //  Boquet.Plant.Bush.Cactus test1 = new Boquet.Plant.Bush.Cactus();
+
             //  test1.ToString(test1);
             //Console.WriteLine(test1.GetHashCode(test1));
             //  Console.WriteLine(test1.GetType(test1));
-            //  Boquet.Plant.Bush.Cactus test2 = new Boquet.Plant.Bush.Cactus();
-            //  Console.WriteLine(test1.Equals(test1, test2));
+
             //Boquet.Plant.Bush.Cactus temp1=new Boquet.Plant.Bush.Cactus();
             //Boquet.Plant.Flower.Rose temp2 = new Boquet.Plant.Flower.Rose();
             //  Console.WriteLine(temp1 is IFlower);
@@ -327,8 +352,8 @@ namespace lab4
             //{
             //    gg.IAmPrinting(i);
             //}
-            gg b = new gg();
-            Console.WriteLine(b.b);
+            //gg b = new gg();
+            //Console.WriteLine(b.b);
 
             //5 lab
             //Action toDo=new Action();
@@ -338,28 +363,81 @@ namespace lab4
             //Console.WriteLine($"1.{toDo.ToString()}\n2.{toDo2.ToString()}");
             //Console.WriteLine((Month)9);
 
-            Listik<Boquet.Plant.Flower.Rose> gg = new Listik<Boquet.Plant.Flower.Rose>();
-            Boquet.Plant.Flower.Rose rose = new Boquet.Plant.Flower.Rose();
-            Cactus cactus = new Cactus();
-            Boquet.Plant.Flower.Gladioulus gladioulus = new Boquet.Plant.Flower.Gladioulus();
-            gg.Add(rose);
-            gg.Remove(rose);
-            gg.Add(rose);
-            gg.Remove(rose);
-            gg.Add(rose);
+            //Listik<Boquet.Plant.Flower.Rose> gg = new Listik<Boquet.Plant.Flower.Rose>();
+            //Boquet.Plant.Flower.Rose rose = new Boquet.Plant.Flower.Rose();
+            //Cactus cactus = new Cactus();
+            //Boquet.Plant.Flower.Gladioulus gladioulus = new Boquet.Plant.Flower.Gladioulus();
+            //gg.Add(rose);
+            //gg.Remove(rose);
+            //gg.Add(rose);
+            //gg.Remove(rose);
+            //gg.Add(rose);
+
             
-            gg.Print();
-            Listik<Cactus> qq = new Listik<Cactus>();
-            qq.Add(new Cactus());
-            qq.Print();
-            Listik<Boquet.Plant.Flower.Gladioulus> zz = new Listik<Boquet.Plant.Flower.Gladioulus>();
-            zz.Add(gladioulus);
-            zz.Add(gladioulus);
-            zz.Print();
-            Controller<Cactus> tmp = new Controller<Cactus>();
-            tmp.price(qq, gg, zz);
-            tmp.sort(qq,gg,zz);
-            tmp.find(qq,gg,zz,"violet");
+            //Listik<Cactus> qq = new Listik<Cactus>();
+            
+            //Listik<Boquet.Plant.Flower.Gladioulus> zz = new Listik<Boquet.Plant.Flower.Gladioulus>();
+            //zz.Add(gladioulus);
+            //zz.Add(gladioulus);
+            //zz.Print();
+            //Controller<Cactus> tmp = new Controller<Cactus>();
+            //tmp.price(qq, gg, zz);
+            //tmp.sort(qq,gg,zz);
+            //tmp.find(qq,gg,zz,"violet");
+
+            string test = null;
+            int monthTest = 13;
+            bool i = false;
+            int j = 0;
+            try
+            {
+                try
+                {
+                    //Testik1.WTF(test);
+
+                    //if (monthTest<0||monthTest>12) throw new Testik2("Месяц неверный");
+
+                    Listik<Cactus> qq = new Listik<Cactus>();
+                    Controller<Cactus> tmp = new Controller<Cactus>();
+                    Listik<Boquet.Plant.Flower.Gladioulus> zz = new Listik<Boquet.Plant.Flower.Gladioulus>();
+                    Listik<Boquet.Plant.Flower.Rose> gg = new Listik<Boquet.Plant.Flower.Rose>();
+                    string a = "gg";
+                    if (a!="violet"&&a!="white"&&a!="green") throw new Testik3("Цвет неверный");
+                    tmp.find(qq, gg, zz, a);
+
+                    //Listik<Cactus> qq = new Listik<Cactus>();
+                    //Controller<Cactus> tmp = new Controller<Cactus>();
+                    //Listik<Boquet.Plant.Flower.Gladioulus> zz = new Listik<Boquet.Plant.Flower.Gladioulus>();
+                    //Listik<Boquet.Plant.Flower.Rose> gg = new Listik<Boquet.Plant.Flower.Rose>();
+                    //string a =null;
+                    //Testik1.WTF(a);
+                    //tmp.find(qq, gg, zz, a);
+
+                    //Listik<Cactus> qq = null;
+                    //Testik1.WTF(qq);
+                    //qq.Add(new Cactus());
+                    //qq.Print();
+                }
+                catch
+                {
+                    Console.WriteLine("Беда-беда\n");
+                    throw;
+                }
+            }
+            catch (Exception e) when (j==0)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine();
+                Console.WriteLine(e.StackTrace);
+                Console.WriteLine();
+                Console.WriteLine(e.TargetSite);
+                Console.WriteLine();
+            }
+            finally
+            {
+                Environment.Exit(0);
+            }
+            Console.WriteLine("То что не должны увидеть");
         }
     }
     

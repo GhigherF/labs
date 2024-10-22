@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lab4
 {
-    public partial class gg
+    internal partial class gg
     {
         public int b
         {

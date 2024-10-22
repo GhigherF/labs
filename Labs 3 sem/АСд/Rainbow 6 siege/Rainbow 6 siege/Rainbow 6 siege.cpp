@@ -3,6 +3,7 @@
 #include <string>
 #include <windows.h>
 #include <queue>
+#include <string>
 using namespace std;
 
 
@@ -29,7 +30,24 @@ Element* newLeaf(char letter, int frequency, Element* left, Element* right) {
     node->right = right;
     return node;
 }
+void decode(Element* root, int& index, string str)
+{
+    if (root == nullptr) {
+        return;
+    }
+    if (!root->left && !root->right)
+    {
+        cout << root->letter;
+        return;
+    }
 
+    index++;
+
+    if (str[index] == '0')
+        decode(root->left, index, str);
+    else
+        decode(root->right, index, str);
+}
 
 void encode(Element* root, string str, map<char, string>& code) {
     if (root == nullptr) return;
@@ -57,7 +75,7 @@ int main() {
 
     map<char, int> freq;
     for (char ch : str) {
-        if (int(ch) < 0 || int(ch) > 70) {
+        if (int(ch) < 0 || int(ch) > 10) {
             freq[ch]++;
         }
     }
@@ -101,9 +119,12 @@ int main() {
     for (char ch : str) {
         stroka += code[ch];
     }
-
+    
     cout << "Закодированная(как дед) строка: " << stroka << '\n';
-
-
-    return 0;
+    cout << "\nЗакодированная в квадрате(как дед в квадрате) строка: " << '\n';
+    int index = -1;
+   while (index < (int)stroka.size()-2)
+    {
+        decode(root, index, stroka);
+    }
 }
