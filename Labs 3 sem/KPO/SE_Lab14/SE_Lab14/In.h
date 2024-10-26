@@ -5,7 +5,7 @@
 #define IN_CODE_TABLE {\
 IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, '|',IN::F, IN::F,IN::F,IN::F,IN::F,\
 IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F,\
-0xAD, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::F, IN::F, IN::F,\
+IN::I, IN::F, IN::F, IN::F, IN::F, IN::F, IN::F, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::F, IN::F, IN::F,\
 IN::T/*0*/, IN::T, IN::T /*2*/, IN::T, IN::T, IN::T, IN::T/* 6*/, IN::T /*7*/, IN::T, IN::T, IN::F, IN::T, IN::T, IN::T, IN::T, IN::F,\
 IN::F, IN::T, IN::T, IN::T /*C*/, IN::T /*D*/, IN::T/* E*/, IN::T, IN::T, IN::T /*H*/, IN::T /* I*/, IN::T, IN::T /*K*/, IN::T /*L*/, IN::T /*M*/, IN::T /*N*/, IN::T /*O*/,\
 IN::T, IN::T, IN::T /*R*/, IN::T, IN::T/* T*/, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::F, IN::F, IN::F, IN::F, IN::F,\
