@@ -19,7 +19,7 @@ namespace lab7
             Console.WriteLine(gg);
 
         }
-    }
+    }     
 
     public class Flower : Plant
     {
@@ -27,7 +27,7 @@ namespace lab7
 
         public override string ToString()
         {
-            return $"Цветик: Name = {name}, Price = {price}";
+            return $"Цветик: Name = {name}, Ценник = {price}";
         }
     }
 
@@ -37,7 +37,7 @@ namespace lab7
 
         public override string ToString()
         {
-            return $"Кустек: Name = {name}, Weight = {weight}";
+            return $"Кустек: Name = {name}, Вес = {weight}";
         }
     }
 
@@ -47,7 +47,7 @@ namespace lab7
 
         public virtual string ToString()
         {
-            return $"Plant: Name = {name}";
+            return $"Растение:= {name}";
         }
 
         public int CompareTo(Plant gg)
