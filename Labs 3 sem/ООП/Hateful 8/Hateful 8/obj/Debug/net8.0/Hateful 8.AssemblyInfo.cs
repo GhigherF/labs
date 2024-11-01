@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hateful 8")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d77c6723f6a663cc0bd87d58ec770b919878198f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de08341d211f2e35d87de356eefb6ffafe9d11c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hateful 8")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hateful 8")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
