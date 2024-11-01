@@ -24,7 +24,7 @@ pair<vector <int>,int> longest(vector<int> numbers) {
         for (int j = 0; j < i; j++)
         {
             if (numbers[i] > numbers[j]) {
-                if (SubLength[i] <= SubLength[j]) {
+                if (SubLength[i] <=SubLength[j]) {
                     SubLength[i] = SubLength[j] + 1;
                 }
             }
@@ -48,10 +48,16 @@ pair<vector <int>,int> longest(vector<int> numbers) {
 void restore(vector<int> numbers, pair<vector<int>,int> count)
 {
     string a = "";
+    bool flag = false;
     int compare = INT_MAX;
-    for (int i = numbers.size()-1;i >=0; i--)
-    {
+    for (int i = numbers.size()-2;i >=0; i--)
+    {   
         if (count.first[i] == count.second&&numbers[i]<compare) {
+            if (count.second == 2 && flag == false) 
+            {
+                flag = true;
+                continue;
+            }
 			a = to_string(numbers[i])+" "+a;
             count.second -= 1;
             compare = numbers[i];
