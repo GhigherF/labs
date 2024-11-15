@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #define ID_MAXSIZE 5
 #define TI_MAXSIZE 4096
 #define TI_INT_DEFAULT 0x00000000
@@ -14,9 +15,11 @@ namespace IT
 	struct Entry
 	{
 		int idxfirstLE;
-		char id[ID_MAXSIZE];
+		string id;
 		IDDATATYPE iddatatype;
 		IDTYPE idtype;
+		
+		
 		union
 		{
 			int vint;
@@ -37,6 +40,6 @@ namespace IT
 	IdTable Create(int size);
 	void Add(IdTable& idtable, Entry entry);
 	Entry GetEntry(IdTable& idtable, int n);
-	int IsId(IdTable& IdTable, char id[ID_MAXSIZE]);
+	int IsId(IdTable& IdTable, string id);
 	void Delete(IdTable& idtable);
 }

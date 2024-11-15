@@ -1,46 +1,70 @@
+﻿//#include "stdafx.h"
 #include "IT.h"
+#include <iostream>
+#include <string>
 #include "Error.h"
-#include <cstring>
-
 using namespace std;
 
 namespace IT
 {
-	IdTable Create(int size)
-	{
-		IdTable table;
-		table.maxsize = size;
-		table.size = 0;
-		table.table = new Entry[size];
-		return table;
-	}
-	void Add(IdTable& table, Entry entry)
-	{
-		if (table.size < table.maxsize)
-		{
-			table.table[table.size] = entry;
-			table.size++;
-		}
-		else
-		{
-			throw ERROR_THROW(104);
-		}
-	}
-		Entry GetEntry(IdTable& table, int n)
-		{
-			return table.table[n];
-		}
-		int IsId(IdTable& table, char* id)
-		{
-			for (int i = 0; i < table.size; i++)
-			{
-				if (strcmp(table.table[i].id, id) == 0)
-					return i;
-			}
-			return -1;
-		}
-		void Delete(IdTable& table)
-		{
-			delete[] table.table;
-		}
-	}
+    IdTable Create(int size)
+    {
+        if (size > 0)
+        {
+            IdTable idtable;
+            idtable.maxsize = size;
+            idtable.size = 0;
+            idtable.table = new Entry[size];
+            return idtable;
+        }
+        ERROR_THROW(116);
+    }
+
+    void Add(IdTable& idtable, Entry entry)
+    {
+        if (strlen(entry.id) > TI_MAXSIZE)
+        {
+            ERROR_THROW(119);
+        }
+        if (idtable.size < idtable.maxsize) {
+            idtable.table[idtable.size] = entry;
+            idtable.size++;
+        }
+        else {
+            ERROR_THROW(117);
+        }
+    }
+
+    Entry GetEntry(IdTable& idtable, int n)
+    {
+        if (n >= 0 && n < idtable.size) {
+            return idtable.table[n];
+        }
+        else {
+            cout << "Invalid:" << endl;
+            Entry invalid;
+            //invalid.id ="";
+            invalid.iddatatype = static_cast<IDDATATYPE>(0);
+            invalid.idtype = static_cast<IDTYPE>(0);
+            invalid.idxfirstLE = TI_NULLIDX;
+            return invalid;
+        }
+    }
+
+    int IsId(IdTable& idtable,string id)
+    {
+        for (int i = 0; i < idtable.size; i++)
+        {
+            if (idtable.table[i].id == id)
+                return i;
+        }
+        return TI_NULLIDX;
+    }
+
+    void Delete(IdTable& idtable)
+    {
+        delete[] idtable.table;
+        idtable.size = 0;
+        idtable.maxsize = 0;
+    }
+}

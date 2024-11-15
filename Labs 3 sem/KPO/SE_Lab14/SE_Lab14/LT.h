@@ -19,15 +19,17 @@
 #define LEX_PLUS 'v'
 #define LEX_MINUS 'v'
 #define LEX_STAR 'v'
+#define LEX_MAIN 'm'
 #define LEX_DIRSLASH 'v'
+#define LEX_EQUALS '='
 
 namespace LT
 {
 	struct Entry
 	{
-		char lexema[LEXEMA_FIXSIZE];
+		char lexema;
 		int sn;
-		int idxTI;
+		int idxTI=LT_TI_NULLIDX;
 	};
 
 	struct LexTable

@@ -1,36 +1,55 @@
+﻿//include "stdafx.h"
 #include "LT.h"
 #include "Error.h"
+#include <iostream>
+
 using namespace std;
 
 namespace LT
 {
-	LexTable Create(int size)
-	{
-		LexTable table;
-		table.maxsize = size;
-		table.size = 0;
-		table.table = new Entry[size];
-		return table;
-	}
+    LexTable Create(int size)
+    {
+        LexTable lextable;
+        if (size > 0)
+        {
+            lextable.maxsize = size;
+            lextable.size = 0;
+            lextable.table = new Entry[size];
+            return lextable;
+        }
+        ERROR_THROW(113);
+    }
 
-	void Add(LexTable& table, Entry entry)
-	{
-		if (table.size < table.maxsize)
-		{
-			table.table[table.size] = entry;
-			table.size++;
-		}
-		else
-		{
-			throw ERROR_THROW(104);
-		}
-	}
-	Entry GetEntry(LexTable& table, int n)
-	{
-		return table.table[n];
-	}
-	void Delete(LexTable& table)
-	{
-		delete[] table.table;
-	}
-}	
+    void Add(LexTable& lextable, Entry entry)
+    {
+        if (lextable.size < lextable.maxsize) {
+            lextable.table[lextable.size] = entry;
+            lextable.size++;
+        }
+        else {
+            ERROR_THROW(114);
+        }
+    }
+
+    Entry GetEntry(LexTable& lextable, int n)
+    {
+        if (n >= 0 && n < lextable.size) {
+            return lextable.table[n];
+        }
+        else {
+            cout << "Invalid:" << endl;
+            Entry invalid;
+            invalid.lexema;
+            invalid.sn = -1;
+            invalid.idxTI = LT_TI_NULLIDX;
+            return invalid;
+        }
+    }
+
+    void Delete(LexTable& lextable)
+    {
+        delete[] lextable.table;
+        lextable.maxsize = 0;
+        lextable.size = 0;
+    }
+}

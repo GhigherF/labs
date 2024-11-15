@@ -21,6 +21,6 @@ namespace Out {
     static const OUT INIOUT{ L"", NULL };
     OUT getout(wchar_t outfile[]);
     void WriteToFile(OUT out, In::IN in);
-    void WriteToError(OUT out, Error::errors error);
+    void WriteToError(OUT out, Error::ERROR error);
     void CloseFile(OUT out);
 }

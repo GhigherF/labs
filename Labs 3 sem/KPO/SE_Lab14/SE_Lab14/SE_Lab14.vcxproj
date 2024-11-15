@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Error.h" />
+    <ClInclude Include="Flexer.h" />
     <ClInclude Include="FST.h" />
     <ClInclude Include="In.h" />
     <ClInclude Include="IT.h" />

@@ -1,4 +1,4 @@
-#include "FST.h"
+﻿#include "FST.h"
 #include <iostream>
 #include <cstdarg>
 

@@ -24,7 +24,7 @@ namespace FST
 
     struct FST
     {
-        const char* string;
+        string string;
         short position;
         short nstates;
         NODE* nodes;
