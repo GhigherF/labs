@@ -1,6 +1,6 @@
 #include "Error.h"
 namespace Error {
-    ERRORS errors[ERROR_MAX_ENTRY]{ 
+    ERRORS errors[ERROR_MAX_ENTRY]{
       ERROR_ENTRY(0, "Недопустимый код ошибки"),
       ERROR_ENTRY(1, "Системный сбой"),
       ERROR_ENTRY_NODEF(2),ERROR_ENTRY_NODEF(3),ERROR_ENTRY_NODEF(4),ERROR_ENTRY_NODEF(5),
@@ -22,13 +22,22 @@ namespace Error {
       ERROR_ENTRY(116, "Превышена ёмкость таблицы идентификаторов"),
       ERROR_ENTRY(117, "Таблица идентификаторов заполнена"),
       ERROR_ENTRY(118, "Недопустимый номер идентификатора"),
-      ERROR_ENTRY(119, "Превышена длинв названия идентификатора"), 
+      ERROR_ENTRY(119, "Превышена длинв названия идентификатора"),
       ERROR_ENTRY(120, "Неверная лексема"),
       ERROR_ENTRY(121,"Ошибка доступа"),
       ERROR_ENTRY_NODEF(130),ERROR_ENTRY_NODEF(140),ERROR_ENTRY_NODEF(150),ERROR_ENTRY_NODEF(160),
       ERROR_ENTRY_NODEF(170),ERROR_ENTRY_NODEF(180),ERROR_ENTRY_NODEF(190),ERROR_ENTRY_NODEF(200),
-      ERROR_ENTRY_NODEF(300),ERROR_ENTRY_NODEF(400),ERROR_ENTRY_NODEF(500),ERROR_ENTRY_NODEF(600),
-      ERROR_ENTRY_NODEF(700),ERROR_ENTRY_NODEF(800),ERROR_ENTRY_NODEF(900),
+      ERROR_ENTRY_NODEF(300),ERROR_ENTRY_NODEF(400),ERROR_ENTRY_NODEF(500),
+      ERROR_ENTRY(600, "Неверная структура программы"),
+      ERROR_ENTRY(601, "Ошибочный оператор"),
+      ERROR_ENTRY(602, "Ошибка в выражении"),
+      ERROR_ENTRY(603, "Ошибка в параметрах функции"),
+      ERROR_ENTRY(604, "Ошибка в параметрах вызываемой функции"),
+      ERROR_ENTRY_NODEF(605),ERROR_ENTRY_NODEF(606),ERROR_ENTRY_NODEF(607),ERROR_ENTRY_NODEF(608),ERROR_ENTRY_NODEF(609),ERROR_ENTRY_NODEF10(610),
+      ERROR_ENTRY_NODEF10(620),ERROR_ENTRY_NODEF10(630),ERROR_ENTRY_NODEF10(640),ERROR_ENTRY_NODEF10(650),ERROR_ENTRY_NODEF10(660),ERROR_ENTRY_NODEF10(670),
+      ERROR_ENTRY_NODEF10(680),ERROR_ENTRY_NODEF10(690),
+      ERROR_ENTRY_NODEF100(700),ERROR_ENTRY_NODEF100(800),
+      ERROR_ENTRY_NODEF100(900)
     };
 
     ERRORS geterror(int id) {

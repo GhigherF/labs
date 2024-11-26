@@ -5,6 +5,7 @@
 #include "In.h"
 #include "Out.h"
 #include "FST.h"
+#include "MFST.h"
 
 int _tmain(int argc, const _TCHAR* argv[]) {
 
@@ -43,14 +44,23 @@ int _tmain(int argc, const _TCHAR* argv[]) {
         parm = Parm::getparm(argc, argv);
         In::ININ in = In::getin(parm.in);
         LT::LexTable lextab = LT::Create(LT_MAXSIZE - 1);
-        IT::IdTable idtab = IT::Create(TI_MAXSIZE - 1);
+       IT::IdTable idtab = IT::Create(TI_MAXSIZE - 1);
         Flexer::Exe(lextab, idtab, in);
         Log::WriteLexTable(log, lextab);
         Log::WriteIdTable(log, idtab);
 
         out = Out::getout(parm.out);
-        Out::WriteToFile(out, in);
+        Out::WriteToFile(out, in);  
+        system("pause");
+
+    MFST_TRACE_START MFST::Mfst mfst(lextab, GRB::getGreibach());
+    mfst.start();
+    mfst.savededucation();
+    mfst.printrules();
+    
     }
+   
+  
     catch (Error::ERRORS e)
     {
         cout << "Îøèáêà " << e.id << ": " << e.message << endl << endl;
@@ -58,8 +68,6 @@ int _tmain(int argc, const _TCHAR* argv[]) {
         out = Out::getout(parm.out);
         Out::WriteToError(out, e);
     }
-    
 
-    system("pause");
     return 0;
 }

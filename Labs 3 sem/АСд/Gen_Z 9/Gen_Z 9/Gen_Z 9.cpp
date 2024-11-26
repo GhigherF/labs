@@ -2,8 +2,158 @@
 #include <vector>
 #include <random>
 #include <numeric>
+#include <iomanip>
 
 using namespace std;
+
+
+void addCity(int &size, vector<vector<int>>& matrix, pair<pair<int, int>, int>* &arr)
+{
+	cout << "\n Добавление города:\n";
+
+	size += 1;
+	vector<vector<int>> tempMatrix(size, (vector<int>(size, 0)));
+
+	for (int i = 0; i < size - 1; i++)
+	{
+		for (int j = 0; j < size - 1; j++)
+		{
+			tempMatrix[i][j] = matrix[i][j];
+		}
+	}
+
+
+	for (int i = 1; i < size; i++)
+	{
+		cout << i << "->" << size << ':';
+		cin >> tempMatrix[i - 1][size - 1];
+
+	}
+
+
+	for (int i = 1; i < size; i++)
+	{
+		cout << size << "->" << i << ':';
+		cin >> tempMatrix[size - 1][i - 1];
+	}
+
+	matrix = vector<vector<int>>(size, (vector<int>(size, 0)));
+	matrix = tempMatrix;
+
+
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			cout << setw(3) << setfill(' ') << matrix[i][j] << " ";
+		}
+		cout << '\n';
+	}
+
+
+	arr = new pair<pair<int, int>, int>[(size * size) - size];
+	int k = 0;
+
+	for (int i = 1; i <= size; i++)
+	{
+		for (int j = 1; j <= size; j++)
+		{
+			if (i == j) continue;
+
+			arr[k].first.first = i, arr[k].first.second = j, arr[k].second = matrix[i - 1][j - 1];
+
+			k += 1;
+		}
+	}
+	cout << "\n-------------------------------------------------------------------------------------\n";
+	for (int i = 0; i < size * size - size; i++)
+	{
+		cout << arr[i].first.first << "->" << arr[i].first.second << "  :" << arr[i].second << '\n';
+	}
+
+}
+
+
+
+
+void deleteCity(int& size, vector<vector<int>>& matrix, pair<pair<int, int>, int>*& arr) {
+	cout << "\nУдаление города:\n";
+	if (size <= 1) {
+		cout << "Удаление невозможно: в графе должен остаться хотя бы один город.\n";
+		return;
+	}
+
+	cout << "Введите номер города для удаления (1-" << size << "): ";
+	int cityToDelete;
+	cin >> cityToDelete;
+
+	if (cityToDelete < 1 || cityToDelete > size) {
+		cout << "Ошибка: введен некорректный номер города.\n";
+		return;
+	}
+
+	// Уменьшаем размер
+	int newSize = size - 1;
+	vector<vector<int>> tempMatrix(newSize, vector<int>(newSize, 0));
+
+	// Переносим данные, исключая удаляемый город
+	int offsetRow = 0, offsetCol = 0;
+	for (int i = 0; i < size; ++i) {
+		if (i + 1 == cityToDelete) {
+			offsetRow = 1;
+			continue;
+		}
+		offsetCol = 0;
+		for (int j = 0; j < size; ++j) {
+			if (j + 1 == cityToDelete) {
+				offsetCol = 1;
+				continue;
+			}
+			tempMatrix[i - offsetRow][j - offsetCol] = matrix[i][j];
+		}
+	}
+
+	matrix = tempMatrix;
+	size = newSize;
+
+	// Пересоздаем массив arr
+	delete[] arr;
+	arr = new pair<pair<int, int>, int>[(size * size) - size];
+	int k = 0;
+
+	for (int i = 1; i <= size; i++) {
+		for (int j = 1; j <= size; j++) {
+			if (i == j) continue;
+			arr[k].first.first = i;
+			arr[k].first.second = j;
+			arr[k].second = matrix[i - 1][j - 1];
+			k++;
+		}
+	}
+
+	cout << "\nОбновленная матрица смежности:\n";
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < size; j++) {
+			cout << setw(3) << setfill(' ') << matrix[i][j] << " ";
+		}
+		cout << '\n';
+	}
+
+	cout << "\nОбновленный список ребер:\n";
+	for (int i = 0; i < size * size - size; i++) {
+		cout << arr[i].first.first << "->" << arr[i].first.second << "  :" << arr[i].second << '\n';
+	}
+	cout << "Город успешно удален!\n";
+}
+
+
+
+
+
+
+
+
+
 
 pair<vector<int>, int> crossoverOX(pair<vector<int>, int>& parent1, pair<vector<int>, int>& parent2, pair<pair<int, int>, int>* arr, int N) {
 	bool flag = false;
@@ -106,7 +256,6 @@ vector<pair<vector<int>,int>> generateInitialPopulation(int populationSize, int 
 	for (auto& solo : population) {
 		bool valid = false;
 		do {
-
 			iota(solo.first.begin(), solo.first.end(), 1);
 			shuffle(solo.first.begin(), solo.first.end(), mt19937(random_device()()));
 
@@ -138,245 +287,148 @@ vector<pair<vector<int>,int>> generateInitialPopulation(int populationSize, int 
 void main()
 {
 	setlocale(LC_ALL, "Russian");
-	
-	
 
-	int size = 0;
-	int i = 0;
-	int N = 999;
+	int size = 8;
+	pair<pair<int, int>, int>* arr = new pair<pair<int, int>, int>[(size * size) - size];
+
+
+
+	vector<vector<int>> matrix = {
+	{ 0,8,11,12,40,22,9,5},//1
+	{ 8,0,9,8,19,23,4,11},//2
+	{ 11,9,0,1,31,16,9,5},//3
+	{ 12,8,1,0,14,11,33,24},//4
+	{ 40,19,31,14,0,30,7,20},//5
+	{ 22,23,16,11,30,0,15,2},//6
+	{ 9,4,9,33,7,15,0,2},//7
+	{ 5,11,5,24,20,2,2,0}//8
+	};
+
 	int k = 0;
-pair<pair<int, int>, int>* arr = new pair<pair<int, int>, int>[N];
-
-
-
-
-
-	bool flag = true;
-	while (flag == true)
+	for (int i = 1; i <= size; i++)
 	{
-		
-		bool temp;
-		cout << "1/0? ";
-		cin >> temp;
-
-		if (temp == false)
+		for (int j = 1; j <= size; j++)
 		{
-			flag = false;
+			if (i == j) continue;
+
+			arr[k].first.first = i, arr[k].first.second = j, arr[k].second = matrix[i - 1][j - 1];
+
+			k += 1;
+		}
+	}
+
+
+
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			cout << setw(3) << setfill(' ') << matrix[i][j] << " ";
+		}
+		cout << "\n\n";
+	}
+
+	cout << "\n\n";
+
+	for (int i = 0; i < size * size - size; i++)
+	{
+		cout << arr[i].first.first << "->" << arr[i].first.second << "  :" << arr[i].second << '\n';
+	}
+
+
+	while (true)
+	{
+		int choice;
+		cout << "\n\n\n\n\n\n\n\n\n1.Do\n2.AddCity\n3.Delete\nChoice:";
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+		{
+			cout << "\nНачальная поппуляция:";
+			int startPopualation;
+			cin >> startPopualation;
+
+
+
+			cout << "\nЧисло эволюций:";
+			int generations;
+			cin >> generations;
+
+			cout << "\nМутация:";
+			double mutation;
+			cin >> mutation;
+
+			auto population = generateInitialPopulation(startPopualation, size, arr, size * size - size);
+			cout << "\n\n\n";
+
+
+			for (int generation = 0; generation < generations; ++generation) {
+
+				vector<double> fitness(population.size());
+				for (size_t i = 0; i < population.size(); ++i) {
+					fitness[i] = 1.0 / population[i].second;
+				}
+				vector<pair<vector<int>, int>>  newPopulation;
+				for (size_t i = 0; i < population.size() / 2; ++i) {
+					pair<vector<int>, int> parent1 = selectParent(population, fitness);
+					pair<vector<int>, int> parent2 = selectParent(population, fitness);
+
+					pair<vector<int>, int> child1 = crossoverOX(parent1, parent2, arr, size * size - size);
+					pair<vector<int>, int> child2 = crossoverOX(parent2, parent1, arr, size * size - size);
+
+					if (((double)rand() / RAND_MAX) < mutation) mutate(child1, arr, size * size - size);
+					if (((double)rand() / RAND_MAX) < mutation) mutate(child2, arr, size * size - size);
+
+					newPopulation.push_back(child1);
+					newPopulation.push_back(child2);
+				}
+				population = move(newPopulation);
+
+				int minDistance = INT_MAX;
+				pair<vector<int>, int> bestInGeneration;
+				for (const auto& individual : population) {
+					if (individual.second < minDistance) {
+						minDistance = individual.second;
+						bestInGeneration = individual;
+					}
+				}
+				cout << generation + 1 << ": ";
+				for (const auto& city : bestInGeneration.first) {
+					cout << "->" << city;
+				}
+				cout << ": " << bestInGeneration.second << '\n';
+			}
+
+			double bestFitness = -numeric_limits<double>::infinity();
+			pair<vector<int>, int> bestIndividual;
+			for (const auto& individual : population)
+			{
+				double currentFitness = 1.0 / individual.second;
+				if (currentFitness > bestFitness) {
+					bestFitness = currentFitness;
+					bestIndividual = individual;
+				}
+			}
+
+			cout << "\n\n\n";
+			for (auto i : bestIndividual.first)
+			{
+				cout << "->" << i;
+			}
+			cout << "  " << bestIndividual.second;
+			exit(69);
+		}
+		case 2:
+		{
+			addCity(size, matrix, arr);
 			break;
 		}
-		k += 1;	
-		
-			cout << "Point 1:";
-			cin >> arr[i].first.first;
-			cout << "\nPoint 2: ";
-			cin >> arr[i].first.second;
-			cout << "\nWeight: ";
-			cin >> arr[i].second;
-			cout << "\n";
-			i += 1;
+		case 3: {
+			deleteCity(size, matrix, arr);
+			break;
+		}
+		}
 	}
-	N = k;
-	cout<<"cities:";
-	int cities;
-	cin>>cities;
-	size=cities;
-	
-	
-
-
-
-//
-//	arr[0].first.first = 1;
-//	arr[0].first.second = 2;
-//	arr[0].second = 25;
-//
-//	arr[1].first.first = 1;
-//	arr[1].first.second = 3;
-//	arr[1].second = 40;
-//
-//	arr[2].first.first = 1;
-//	arr[2].first.second = 4;
-//	arr[2].second = 31;
-//
-//	arr[3].first.first = 1;
-//	arr[3].first.second = 5;
-//	arr[3].second = 27;
-//	size += 1;
-///////////////////////////////////////////
-//	arr[4].first.first = 2;
-//	arr[4].first.second =1;
-//	arr[4].second = 5;
-//
-//	arr[5].first.first = 2;
-//	arr[5].first.second = 3;
-//	arr[5].second = 17;
-//
-//	arr[6].first.first = 2;
-//	arr[6].first.second = 4;
-//	arr[6].second = 30;
-//
-//	arr[7].first.first = 2;
-//	arr[7].first.second = 5;
-//	arr[7].second = 25;
-//	size += 1;
-//	/////////////////////////////////////
-//	arr[8].first.first = 3;
-//	arr[8].first.second = 1;
-//	arr[8].second = 19;
-//
-//	arr[9].first.first = 3;
-//	arr[9].first.second = 2;
-//	arr[9].second =15;
-//
-//	arr[10].first.first = 3;
-//	arr[10].first.second = 4;
-//	arr[10].second = 6;
-//
-//	arr[11].first.first = 3;
-//	arr[11].first.second = 5;
-//	arr[11].second = 1;
-//	size += 1;
-/////////////////////////////////////////////
-//	arr[12].first.first = 4;
-//	arr[12].first.second = 1;
-//	arr[12].second = 9;
-//
-//	arr[13].first.first = 4;
-//	arr[13].first.second = 2;
-//	arr[13].second = 50;
-//
-//	arr[14].first.first = 4;
-//	arr[14].first.second = 3;
-//	arr[14].second = 24;
-//
-//	arr[15].first.first = 4;
-//	arr[15].first.second = 5;
-//	arr[15].second = 6;
-//	size += 1;
-////////////////////////////////////////////
-//	arr[16].first.first = 5;
-//	arr[16].first.second = 1;
-//	arr[16].second = 22;
-//
-//	arr[17].first.first = 5;
-//	arr[17].first.second = 2;
-//	arr[17].second = 8;
-//
-//	arr[18].first.first = 5;
-//	arr[18].first.second = 3;
-//	arr[18].second = 7;
-//
-//	arr[19].first.first = 5;
-//	arr[19].first.second = 4;
-//	arr[19].second = 10;
-//	size += 1;
-//////////////////////////////////////////
-
-
-
-
-
-//arr[0].first.first = 1;
-//arr[0].first.second = 2;
-//arr[0].second = 11;
-//
-//arr[1].first.first = 2;
-//arr[1].first.second = 3;
-//arr[1].second = 11;
-//
-//arr[2].first.first = 3;
-//arr[2].first.second = 4;
-//arr[2].second = 11;
-//
-//arr[3].first.first = 4;
-//arr[3].first.second = 5;
-//arr[3].second = 11;
-//
-//arr[4].first.first = 5;
-//arr[4].first.second = 6;
-//arr[4].second = 11;
-//
-//arr[5].first.first = 6;
-//arr[5].first.second = 7;
-//arr[5].second = 11;
-//
-//arr[6].first.first = 7;
-//arr[6].first.second = 8;
-//arr[6].second = 11;
-//
-//arr[7].first.first = 8;
-//arr[7].first.second = 1;
-//arr[7].second = 11;
-
-//N = 8;
-//size = 8;
-
-
-	N = 20;
-
-
-	for (int i=0;i<N;i++)
-	{
-		cout << arr[i].first.first << "->" << arr[i].first.second << "   :" << arr[i].second << '\n';
-	}
-
-	int generations = 100;
-	double mutation=0.2;	
-
-
-	auto population=generateInitialPopulation(size*5,size, arr,N);
-	cout << "\n\n\n";
-
-for (auto j: population)
-{
-	for (auto i : j.first)
-	{
-		cout << "->"<<i;
-	}
-	cout<<"  "<<j.second;
-	cout << '\n';
-}
-
-
-for (int generation = 0; generation < generations; ++generation) {
-
-	vector<double> fitness(population.size());
-	for (size_t i = 0; i < population.size(); ++i) {
-		fitness[i] = 1.0 / population[i].second;
-	}
-	vector<pair<vector<int>, int>>  newPopulation;
-	for (size_t i = 0; i < population.size() / 2; ++i) {
-		pair<vector<int>, int> parent1 = selectParent(population, fitness);
-		pair<vector<int>, int> parent2 = selectParent(population, fitness);
-
-		pair<vector<int>, int> child1 = crossoverOX(parent1, parent2,arr,N);
-		pair<vector<int>, int> child2 = crossoverOX(parent2, parent1,arr,N);
-
-		if (((double)rand() / RAND_MAX) < mutation) mutate(child1,arr,N);
-		if (((double)rand() / RAND_MAX) < mutation) mutate(child2,arr,N);
-
-		newPopulation.push_back(child1);
-		newPopulation.push_back(child2);
-	}
-	population = move(newPopulation);
-}
-
-double bestFitness = -numeric_limits<double>::infinity();
-pair<vector<int>, int> bestIndividual;
-for (const auto& individual : population) 
-{
-	double currentFitness = 1.0 / individual.second;
-	if (currentFitness > bestFitness) {
-		bestFitness = currentFitness;
-		bestIndividual = individual;
-	}
-}
-
-cout << "\n\n\n";
-for (auto i : bestIndividual.first)
-{
-	cout << "->" << i;
-}
-cout << "  " << bestIndividual.second;
-
 }

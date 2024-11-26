@@ -199,24 +199,40 @@ let user6={
 }
 
 
-function deepCopy(obj)
-{
-    if (obj===null || typeof obj !== 'object') return obj;
+// function deepCopy(obj)
+// {
+//   let copy=Array.isArray(obj)?[]:{};
+//   for(let key in obj)
+//   {
+//     copy[key]=deepCopy(obj[key]);
+//   }
+//   return copy;
+// }
 
-  let copy=Array.isArray(obj)?[]:{};
-  for(let key in obj)
-  {
-    copy[key]=deepCopy(obj[key]);
-  }
-  return copy;
+
+
+let temp8 = { ...user6 };
+
+if (user6.studies) {
+    temp8.studies = { ...user6.studies };
+    
+    if (user6.studies.department) {
+        temp8.studies.department = { ...user6.studies.department };
+    }
 }
 
+if (Array.isArray(user6.exams)) {
+    temp8.exams = user6.exams.map(exam => {
+        let copiedExam = { ...exam };
+        
+        if (exam.professor) {
+            copiedExam.professor = { ...exam.professor };
+        }
+        
+        return copiedExam;
+    });
+}
 
-
-
-
-
-let temp8=deepCopy(user6);
  temp8.studies.department.group=52;
  temp8.exams[0].maths="АААААААА";
  temp8.exams[1].professor.name="Jonhy SilverHand";
@@ -270,7 +286,33 @@ let user7=
         },
     ]
 }
-let temp9=deepCopy(user7);
+
+let temp9 = { ...user7 };
+
+
+if (user7.studies) {
+    temp9.studies = { ...user7.studies };
+
+    if (user7.studies.department) {
+        temp9.studies.department = { ...user7.studies.department };
+    }
+}
+if (Array.isArray(user7.exams)) {
+    temp9.exams = user7.exams.map(exam => {
+        let copiedExam = { ...exam };
+
+        if (exam.professor) {
+            copiedExam.professor = { ...exam.professor };
+
+            if (Array.isArray(exam.professor.articles)) {
+                copiedExam.professor.articles = exam.professor.articles.map(article => ({ ...article }));
+            }
+        }
+
+        return copiedExam;
+    });
+}
+
 temp9.exams[1].professor.articles[1].pagesNumber=3;
 temp9.exams[0].professor.articles[0].title="1984";
 console.log(user7);
@@ -302,7 +344,38 @@ let store={
             sidebar:[],
         }
     }
-    temp10=deepCopy(store);
+
+    let temp10 = { ...store };
+
+    if (store.state) {
+        temp10.state = { ...store.state };
+    
+        if (store.state.profilePage) {
+            temp10.state.profilePage = { ...store.state.profilePage };
+    
+            if (Array.isArray(store.state.profilePage.posts)) {
+                temp10.state.profilePage.posts = store.state.profilePage.posts.map(post => ({ ...post }));
+            }
+        }
+    
+        if (store.state.dialogsPage) {
+            temp10.state.dialogsPage = { ...store.state.dialogsPage };
+
+            if (Array.isArray(store.state.dialogsPage.dialogs)) {
+                temp10.state.dialogsPage.dialogs = store.state.dialogsPage.dialogs.map(dialog => ({ ...dialog }));
+            }
+    
+            if (Array.isArray(store.state.dialogsPage.messages)) {
+                temp10.state.dialogsPage.messages = store.state.dialogsPage.messages.map(message => ({ ...message }));
+            }
+        }
+    
+        if (Array.isArray(store.state.sidebar)) {
+            temp10.state.sidebar = [...store.state.sidebar];
+        }
+    }
+    
+
     temp10.state.dialogsPage.dialogs[2].id=52;
     temp10.state.dialogsPage.messages[0].message="Hello";
     temp10.state.dialogsPage.messages[1].message="Hello";
