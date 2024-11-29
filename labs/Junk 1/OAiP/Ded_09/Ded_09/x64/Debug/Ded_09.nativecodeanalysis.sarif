@@ -1,0 +1,219 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6054",
+          "message": {
+            "text": "Возможно, строка \"street\" не завершается нулем."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/git/labs/labs/KPO/Ded_09/Ded_09/Ded_09.cpp"
+                },
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 6,
+                  "endLine": 75,
+                  "endColumn": 23
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "delet",
+                  "decoratedName": "?delet@@YAXPEAPEAUAdress@@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/git/labs/labs/KPO/Ded_09/Ded_09/Ded_09.cpp"
+                          },
+                          "region": {
+                            "startLine": 68,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/git/labs/labs/KPO/Ded_09/Ded_09/Ded_09.cpp"
+                          },
+                          "region": {
+                            "startLine": 69,
+                            "startColumn": 7
+                          }
+                        },
+                        "message": {
+                          "text": "Это выражение может привести к тому, что \"street\" не будет завершаться нулем"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/git/labs/labs/KPO/Ded_09/Ded_09/Ded_09.cpp"
+                          },
+                          "region": {
+                            "startLine": 70,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/git/labs/labs/KPO/Ded_09/Ded_09/Ded_09.cpp"
+                          },
+                          "region": {
+                            "startLine": 71,
+                            "startColumn": 8
+                          }
+                        },
+                        "message": {
+                          "text": "\"street\" является выходными данными из \"gets_s\" (объявлено в c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\stdio.h:316)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/git/labs/labs/KPO/Ded_09/Ded_09/Ded_09.cpp"
+                          },
+                          "region": {
+                            "startLine": 72,
+                            "startColumn": 8
+                          }
+                        },
+                        "message": {
+                          "text": "\"street\" является выходными данными из \"gets_s\" (объявлено в c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\stdio.h:316)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/git/labs/labs/KPO/Ded_09/Ded_09/Ded_09.cpp"
+                          },
+                          "region": {
+                            "startLine": 73,
+                            "startColumn": 8
+                          }
+                        },
+                        "message": {
+                          "text": "Войти в этот цикл (предполагается \"t\")"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/git/labs/labs/KPO/Ded_09/Ded_09/Ded_09.cpp"
+                          },
+                          "region": {
+                            "startLine": 75,
+                            "startColumn": 6
+                          }
+                        },
+                        "message": {
+                          "text": "\"street\" является входными данными для \"strcmp\" (объявлено в c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\string.h:100)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/git/labs/labs/KPO/Ded_09/Ded_09/Ded_09.cpp"
+                          },
+                          "region": {
+                            "startLine": 75,
+                            "startColumn": 6
+                          }
+                        },
+                        "message": {
+                          "text": "\"street\" должно завершаться нулем в соответствии с SAL-аннотацией для \"strcmp\""
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.37.32822.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/git/labs/labs/KPO/Ded_09/Ded_09/Ded_09.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "f9ae8ba7b97fb22b0cfefbee55e5c44b5e50a7735d851f01c1f3668c62c4ca92"
+          }
+        }
+      ]
+    }
+  ]
+}

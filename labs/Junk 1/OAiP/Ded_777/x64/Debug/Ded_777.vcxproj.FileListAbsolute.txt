@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+C:\Users\stude\OneDrive\Рабочий стол\Всякое\project\Ded_777\x64\Debug\Ded_777.exe
+=======
+C:\Users\stude\OneDrive\Рабочий стол\Всякое\project\Ded_777\x64\Debug\Ded_777.exe
+>>>>>>> 6a1bf835ea3554afaa22b1acf46942cac87e08dd

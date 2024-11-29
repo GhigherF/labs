@@ -1,7 +1,7 @@
 //1
 let BigYellowSquare={size:"Big",color:"Yellow",form:"Square"};
 let SmallYellowSquare={size:"Small"};
-Object.setPrototypeOf(SmallYellowSquare,BigYellowSquare);
+Object.setPrototypeOf(SmallYellowSquare,BigYellowSquare);   
 let flag=false;
 for (let i in SmallYellowSquare)
 {
@@ -37,6 +37,7 @@ console.log(i);
 //2
 class Human
 {
+    public;
  _age;
 _year;
     constructor (name,surname,adress)
@@ -130,6 +131,8 @@ class Faculty
 
 let stud=new Student("Kirill","Dmitrochenko","kopeika","IT",2,"10-2",73221666);
 stud.age=2006;
+stud.public=25;
+console.log(stud.public);
 let stud2=new Student("Kirill","Dmitrochenko","kopeika","IT",2,"8-1",74221666);
 stud2.age=2006;
 let arr=[stud,stud2];

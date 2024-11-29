@@ -1,0 +1,146 @@
+﻿Сборка начата 28.05.2024 14:46:39.
+Уровень детализации журнала: Normal.     1>Проект "C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.vcxproj" в узле 2 (целевые объекты Build).
+     1>InitializeBuildStatus:
+         Обращение к "x64\Debug\Ded_14.tlog\unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\HostX64\x64\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt Ded_14.cpp Source.cpp
+         Ded_14.cpp
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(31,10): error C2039: "Object": не является членом "listx".
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(3,11): message : см. объявление "listx"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(36,22): error C2039: "Object": не является членом "listx".
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(3,11): message : см. объявление "listx"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(36,11): error C2512: listx::hashTC::Object: нет подходящего конструктора по умолчанию
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(147,1): error C2011: AAA: переопределение типа "struct"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(72,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(164,9): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(72,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(169,23): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(72,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(169,54): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(72,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,2): error C2653: hashTC: не является именем класса или пространства имен
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,10): error C2065: Object: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,17): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "H"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,17): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,21): error C2653: hashTC: не является именем класса или пространства имен
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,29): error C3861: create: идентификатор не найден
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(193,22): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(72,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(197,4): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(72,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(200,4): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(72,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(201,4): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(204,11): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(206,22): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(72,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(209,4): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(72,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(210,4): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(213,21): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(72,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(216,4): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(72,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(217,8): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(222,15): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(247,5): error C2084: функция "int hf(void *)" уже имеет текст реализации
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(161,5): message : см. предыдущее определение "hf"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(250,9): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(232,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(253,6): error C2084: функция "void AAA_print(listx::Element *)" уже имеет текст реализации
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(167,6): message : см. предыдущее определение "AAA_print"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(255,23): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(232,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(255,54): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(232,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(258,5): error C2084: функция "int main(void)" уже имеет текст реализации
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(172,5): message : см. предыдущее определение "main"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,2): error C2653: hashTC: не является именем класса или пространства имен
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,10): error C2065: Object: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,17): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "H"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,17): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,21): error C2653: hashTC: не является именем класса или пространства имен
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,29): error C3861: create: идентификатор не найден
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(279,22): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(232,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(283,4): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(232,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(286,4): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(232,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(287,4): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(290,11): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(292,22): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(232,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(295,4): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(232,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(296,4): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(299,21): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(232,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(302,6): error C2027: использование неопределенного типа "AAA"
+       C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(232,8): message : см. объявление "AAA"
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(303,10): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(308,17): error C2065: H: необъявленный идентификатор
+     1>C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(308,7): error C2065: AAA_print: необъявленный идентификатор
+         Source.cpp
+         Создание кода...
+     1>Сборка проекта "C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+       "C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.vcxproj" (целевой объект Build ) (1) ->
+       (Целевой объект ClCompile) -> 
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(31,10): error C2039: "Object": не является членом "listx".
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(36,22): error C2039: "Object": не является членом "listx".
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(36,11): error C2512: listx::hashTC::Object: нет подходящего конструктора по умолчанию
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(147,1): error C2011: AAA: переопределение типа "struct"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(164,9): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(169,23): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(169,54): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,2): error C2653: hashTC: не является именем класса или пространства имен
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,10): error C2065: Object: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,17): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "H"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,17): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,21): error C2653: hashTC: не является именем класса или пространства имен
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(178,29): error C3861: create: идентификатор не найден
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(193,22): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(197,4): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(200,4): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(201,4): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(204,11): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(206,22): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(209,4): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(210,4): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(213,21): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(216,4): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(217,8): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(222,15): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(247,5): error C2084: функция "int hf(void *)" уже имеет текст реализации
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(250,9): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(253,6): error C2084: функция "void AAA_print(listx::Element *)" уже имеет текст реализации
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(255,23): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(255,54): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(258,5): error C2084: функция "int main(void)" уже имеет текст реализации
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,2): error C2653: hashTC: не является именем класса или пространства имен
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,10): error C2065: Object: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,17): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "H"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,17): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,21): error C2653: hashTC: не является именем класса или пространства имен
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(264,29): error C3861: create: идентификатор не найден
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(279,22): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(283,4): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(286,4): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(287,4): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(290,11): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(292,22): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(295,4): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(296,4): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(299,21): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(302,6): error C2027: использование неопределенного типа "AAA"
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(303,10): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(308,17): error C2065: H: необъявленный идентификатор
+         C:\git\labs\labs\KPO\Ded_14\Ded_14\Ded_14.cpp(308,7): error C2065: AAA_print: необъявленный идентификатор
+
+    Предупреждений: 0
+    Ошибок: 50
+
+Прошло времени 00:00:00.58
