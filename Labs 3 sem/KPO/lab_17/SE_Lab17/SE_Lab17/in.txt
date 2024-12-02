@@ -1,21 +1,24 @@
+announce small fn strl(symbol p)
+{
+write p;
+return a;
+};
 main
 {
-declare integer x;
-declare integer y;
-declare integer z;
-declare string sa;
-declare string sb;
-declare string sc;
-declare integer function strl(string string p);
-x = 1;
-y = 5;
-sa = '1234567890';
-sb = '1234567890';
-z = fi(x,y);
+announce small x;
+announce small y;
+announce small z;
+announce symbol sa;
+announce symbol sb;
+announce symbol sc;
+x = <- 1;
+y = -> 5;
+sa = '1';
+sb = 'a';
 sc = fs(sa,sb);
-print 'Hello World';
-print z;
-print sc;
-print strl(sc);
+write 'Hello World';
+write z;
+write sc;
+write strl(sc);
 return 0;
 };

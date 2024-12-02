@@ -67,6 +67,7 @@ int _tmain(int argc, const _TCHAR* argv[]) {
         Log::WriteError(log, e);
         out = Out::getout(parm.out);
         Out::WriteToError(out, e);
+        exit(69);
     }
 
     return 0;

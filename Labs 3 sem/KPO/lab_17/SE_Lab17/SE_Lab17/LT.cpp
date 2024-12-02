@@ -33,7 +33,7 @@ namespace LT
             return lextable.table[n];
         }
         else {
-            cout << "Ошибка: неверный индекс в лексической таблице" << endl;
+            ERROR_THROW(122);
             Entry invalid;
             invalid.lexema = ' ';
             invalid.snum = -1;

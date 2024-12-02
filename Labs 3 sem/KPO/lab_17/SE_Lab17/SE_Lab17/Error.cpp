@@ -25,6 +25,7 @@ namespace Error {
       ERROR_ENTRY(119, "Превышена длинв названия идентификатора"),
       ERROR_ENTRY(120, "Неверная лексема"),
       ERROR_ENTRY(121,"Ошибка доступа"),
+      ERROR_ENTRY(122,"Ошибка: неверный индекс в лексической таблице"),
       ERROR_ENTRY_NODEF(130),ERROR_ENTRY_NODEF(140),ERROR_ENTRY_NODEF(150),ERROR_ENTRY_NODEF(160),
       ERROR_ENTRY_NODEF(170),ERROR_ENTRY_NODEF(180),ERROR_ENTRY_NODEF(190),ERROR_ENTRY_NODEF(200),
       ERROR_ENTRY_NODEF(300),ERROR_ENTRY_NODEF(400),ERROR_ENTRY_NODEF(500),

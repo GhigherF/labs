@@ -144,15 +144,12 @@ void Log::WriteIdTable(LOG log, IT::IdTable& idtable)
 
         *log.stream << ", " << ent.idxfirstLE << ", ";
 
-        if (ent.iddatatype == IT::INT)
+        if (ent.iddatatype == IT::SML)
         {
-            *log.stream << ent.value.vint;
+            *log.stream << ent.value.vsmall;
         }
         else {
-            for (int j = 0; j < ent.value.vstr->len; j++)
-            {
-                *log.stream << ent.value.vstr->str[j];
-            }
+                *log.stream << ent.value.vsymbol;
         }
         *log.stream << endl;
     }

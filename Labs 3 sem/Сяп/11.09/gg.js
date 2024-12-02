@@ -21,6 +21,10 @@ class Task
     {
        this. _name=value;
     }
+    get id()
+    {
+        return this._id;
+    }
 
     changeStatus()
     {
@@ -44,10 +48,17 @@ class ToDoList
     {
        this. _name=value;
     }
-
+get name()
+    {
+        return  this._name;
+    }
     Add(task)
     {
 this._list.push(task);
+    }
+    Delete(name)
+    {
+        this._list.splice(this._list.indexOf(name),1);
     }
 }
 
@@ -64,4 +75,10 @@ let list1=new ToDoList("Планы на жизнь");
 list1.Add(task1);
 list1.Add(task2);
 task2.changeStatus();
+list1.Delete(task2.name);
 console.log(list1);
+
+function gg()
+{
+    alert ("TEST");
+}

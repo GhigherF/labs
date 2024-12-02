@@ -7,48 +7,53 @@
 
 namespace  Flexer
 {
-
-	FST::FST typeInteger("", 8,
-		FST::NODE(1, FST::RELATION('i', 1)),
-		FST::NODE(1, FST::RELATION('n', 2)),
-		FST::NODE(1, FST::RELATION('t', 3)),
-		FST::NODE(1, FST::RELATION('e', 4)),
-		FST::NODE(1, FST::RELATION('g', 5)),
-		FST::NODE(1, FST::RELATION('e', 6)),
-		FST::NODE(1, FST::RELATION('r', 7)),
+	FST::FST MoveLeft("", 3,
+		FST::NODE(1, FST::RELATION('<', 1)),
+		FST::NODE(1, FST::RELATION('-', 2)),
 		FST::NODE()
 	);
 
-	FST::FST typeString("", 7,
+	FST::FST MoveRight("", 3,
+		FST::NODE(1, FST::RELATION('-', 1)),
+		FST::NODE(1, FST::RELATION('>', 2)),
+		FST::NODE()
+	);
+	
+
+	FST::FST typeSmall("", 6,
 		FST::NODE(1, FST::RELATION('s', 1)),
-		FST::NODE(1, FST::RELATION('t', 2)),
-		FST::NODE(1, FST::RELATION('r', 3)),
-		FST::NODE(1, FST::RELATION('i', 4)),
-		FST::NODE(1, FST::RELATION('n', 5)),
-		FST::NODE(1, FST::RELATION('g', 6)),
-		FST::NODE()
-	);
-
-	FST::FST typeFunction("", 9,
-		FST::NODE(1, FST::RELATION('f', 1)),
-		FST::NODE(1, FST::RELATION('u', 2)),
-		FST::NODE(1, FST::RELATION('n', 3)),
-		FST::NODE(1, FST::RELATION('c', 4)),
-		FST::NODE(1, FST::RELATION('t', 5)),
-		FST::NODE(1, FST::RELATION('i', 6)),
-		FST::NODE(1, FST::RELATION('o', 7)),
-		FST::NODE(1, FST::RELATION('n', 8)),
-		FST::NODE()
-	);
-
-	FST::FST typeDeclare("", 8,
-		FST::NODE(1, FST::RELATION('d', 1)),
-		FST::NODE(1, FST::RELATION('e', 2)),
-		FST::NODE(1, FST::RELATION('c', 3)),
+		FST::NODE(1, FST::RELATION('m', 2)),
+		FST::NODE(1, FST::RELATION('a', 3)),
 		FST::NODE(1, FST::RELATION('l', 4)),
-		FST::NODE(1, FST::RELATION('a', 5)),
-		FST::NODE(1, FST::RELATION('r', 6)),
-		FST::NODE(1, FST::RELATION('e', 7)),
+		FST::NODE(1, FST::RELATION('l', 5)),
+		FST::NODE()
+	);
+
+	FST::FST typeSymbol("", 7,
+		FST::NODE(1, FST::RELATION('s', 1)),
+		FST::NODE(1, FST::RELATION('y', 2)),
+		FST::NODE(1, FST::RELATION('m', 3)),
+		FST::NODE(1, FST::RELATION('b', 4)),
+		FST::NODE(1, FST::RELATION('o', 5)),
+		FST::NODE(1, FST::RELATION('l', 6)),
+		FST::NODE()
+	);
+
+	FST::FST typeFn("", 3,
+		FST::NODE(1, FST::RELATION('f', 1)),
+		FST::NODE(1, FST::RELATION('n', 2)),
+		FST::NODE()
+	);
+
+	FST::FST typeAnnounce("", 9,
+		FST::NODE(1, FST::RELATION('a', 1)),
+		FST::NODE(1, FST::RELATION('n', 2)),
+		FST::NODE(1, FST::RELATION('n', 3)),
+		FST::NODE(1, FST::RELATION('o', 4)),
+		FST::NODE(1, FST::RELATION('u', 5)),
+		FST::NODE(1, FST::RELATION('n', 6)),
+		FST::NODE(1, FST::RELATION('c', 7)),
+		FST::NODE(1, FST::RELATION('e', 8)),
 		FST::NODE()
 	);
 
@@ -70,12 +75,12 @@ namespace  Flexer
 		FST::NODE()
 	);
 
-	FST::FST typePrint("", 6,
-		FST::NODE(1, FST::RELATION('p', 1)),
+	FST::FST typeWrite("", 6,
+		FST::NODE(1, FST::RELATION('w', 1)),
 		FST::NODE(1, FST::RELATION('r', 2)),
 		FST::NODE(1, FST::RELATION('i', 3)),
-		FST::NODE(1, FST::RELATION('n', 4)),
-		FST::NODE(1, FST::RELATION('t', 5)),
+		FST::NODE(1, FST::RELATION('t', 4)),
+		FST::NODE(1, FST::RELATION('e', 5)),
 		FST::NODE()
 	);
 
@@ -221,7 +226,6 @@ namespace  Flexer
 			FST::RELATION('\'', 3)),
 		FST::NODE()
 	);
-
 	FST::FST typeNumbLiteral("", 2,
 		FST::NODE(20,
 			FST::RELATION('0', 0), FST::RELATION('1', 0), FST::RELATION('2', 0), FST::RELATION('3', 0), FST::RELATION('4', 0),
@@ -249,13 +253,13 @@ namespace  Flexer
 		{
 			if (IT::IsId(idtable, words[i].first) == TI_NULLIDX)
 			{
-				if (words[i - 2].first == "integer")
+				if (words[i - 2].first == "small")
 				{
-					ent = { i+1,words[i].first,IT::INT,IT::F,TI_INT_DEFAULT };
+					ent = { i+1,words[i].first,IT::SML,IT::F,TI_SMALL_DEFAULT };
 				}
-				else if (words[i - 2].first == "string") {
+				else if (words[i - 2].first == "symbol") {
 
-					ent = { i+1,words[i].first,IT::STR,IT::F , TI_STR_DEFAULT };
+					ent = { i+1,words[i].first,IT::SMB,IT::F , TI_SYMB_DEFAULT };
 				}
 				else {
 					ERROR_THROW(121);
@@ -263,18 +267,18 @@ namespace  Flexer
 			}
 			IT::Add(idtable, ent);
 		}
-		else if (LT::GetEntry(lextable, i - 1).lexema == 't' && LT::GetEntry(lextable, i - 2).lexema == 'd')
+		else if (LT::GetEntry(lextable, i - 1).lexema == 't' && LT::GetEntry(lextable, i - 2).lexema == 'a')
 		{
 			int buf = IT::IsId(idtable, words[i].first);
 			if ((IT::IsId(idtable, words[i].first) == TI_NULLIDX || idtable.table[buf].idtype == IT::P) || (IT::IsId(idtable, words[i].first) != TI_NULLIDX && isFunc))
 			{
-				if (words[i - 1].first == "integer")
+				if (words[i - 1].first == "small")
 				{
-					ent = { i+1,words[i].first,IT::INT,IT::V,TI_INT_DEFAULT };
+					ent = { i+1,words[i].first,IT::SML,IT::V,TI_SMALL_DEFAULT };
 				}
-				else if (words[i - 1].first == "string")
+				else if (words[i - 1].first == "symbol")
 				{
-					ent = { i+1,words[i].first,IT::STR,IT::V,TI_STR_DEFAULT };
+					ent = { i+1,words[i].first,IT::SMB,IT::V,TI_SYMB_DEFAULT };
 				}
 				else {
 					ERROR_THROW(121);
@@ -285,13 +289,13 @@ namespace  Flexer
 		else if (LT::GetEntry(lextable, i - 2).lexema == ',' || LT::GetEntry(lextable, i - 4).lexema == 'f')
 		{
 
-			if (words[i - 1].first == "integer")
+			if (words[i - 1].first == "small")
 			{
-				ent = { i+1, words[i].first, IT::INT, IT::P, TI_INT_DEFAULT };
+				ent = { i+1, words[i].first, IT::SML, IT::P, TI_SMALL_DEFAULT };
 			}
-			else if (words[i - 1].first == "string")
+			else if (words[i - 1].first == "symbol")
 			{
-				ent = { i+1,words[i].first,IT::STR,IT::P,TI_STR_DEFAULT };
+				ent = { i+1,words[i].first,IT::SMB,IT::P,TI_SYMB_DEFAULT};
 			}
 			else {
 				ERROR_THROW(121);
@@ -308,23 +312,23 @@ namespace  Flexer
 
 
 
-	void valueOfINT(LT::LexTable& lextable, IT::IdTable& idtable, int ind, std::vector<std::pair<std::string, int>> words, int indIdTab)
+	void valueOfSMALL(LT::LexTable& lextable, IT::IdTable& idtable, int ind, std::vector<std::pair<std::string, int>> words, int indIdTab)
 	{
 		if (lextable.table[ind - 1].lexema == '=' && lextable.table[ind - 2].lexema == 'i')
 		{
 			int buf = IT::IsId(idtable, words[ind - 2].first);
-			idtable.table[buf].value.vint = std::stoi(words[ind].first);
+			idtable.table[buf].value.vsmall = std::stoi(words[ind].first);
 		}
 	}
 
-	void valueOfSTR(LT::LexTable& lextable, IT::IdTable& idtable, int ind, std::vector<std::pair<std::string, int>> words)
+	void valueOfSYMB(LT::LexTable& lextable, IT::IdTable& idtable, int ind, std::vector<std::pair<std::string, int>> words)
 	{
 		if (lextable.table[ind - 1].lexema == '=' && lextable.table[ind - 2].lexema == 'i')
 		{
 			int buf = IT::IsId(idtable, words[ind - 2].first);
-			std::string strValue = words[ind].first;
-			idtable.table[buf].value.vstr->len = (char)(strValue.length());
-			strncpy(idtable.table[buf].value.vstr->str, strValue.c_str(), TI_STR_MAXSIZE - 1);
+			char strValue = words[ind].first[1];
+
+			idtable.table[buf].value.vsymbol = strValue;
 		}
 	}
 
@@ -381,8 +385,7 @@ namespace  Flexer
 					}
 
 				}
-				else if (in.text[i] == ',' || in.text[i] == ';' || in.text[i] == '{' || in.text[i] == '}' || in.text[i] == '(' || in.text[i] == ')'
-					|| in.text[i] == '*' || in.text[i] == '/' || in.text[i] == '+' || in.text[i] == '-' || in.text[i] == '=')
+				else if (in.text[i] == ','|| in.text[i] == ';' || in.text[i] == '{' || in.text[i] == '}' || in.text[i] == '(' || in.text[i] == ')' || in.text[i] == '=')
 				{
 					if (bufWord != "")
 					{
@@ -390,6 +393,13 @@ namespace  Flexer
 						bufWord = "";
 						size++;
 					}
+					bufWord += in.text[i];
+					words.push_back({ bufWord, lineNumber });
+					bufWord = "";
+					size++;
+				}
+				else if ((in.text[i] == '>'&& in.text[i-1] == '-')||(in.text[i] == '-'&&in.text[i-1]=='<'))
+				{
 					bufWord += in.text[i];
 					words.push_back({ bufWord, lineNumber });
 					bufWord = "";
@@ -430,29 +440,39 @@ namespace  Flexer
 
 		for (int i = 0;i < size;i++)
 		{
-			if (check(words[i].first, typeInteger))
+			if (check(words[i].first, MoveRight))
 			{
-				LT::Entry ent = { LEX_INTEGER, words[i].second };
+				LT::Entry ent = { LEX_MOVE, words[i].second };
 				LT::Add(lextable, ent);
 			}
-			else if (check(words[i].first, typeString))
+			else if (check(words[i].first,MoveLeft))
 			{
-				LT::Entry ent = { LEX_STRING,  words[i].second };
+				LT::Entry ent = {LEX_MOVE, words[i].second};
 				LT::Add(lextable, ent);
 			}
-			else if (check(words[i].first, typeFunction))
+			else if (check(words[i].first, typeSmall))
 			{
-				LT::Entry ent = { LEX_FUNCTION,  words[i].second };
+				LT::Entry ent = { LEX_SMALL, words[i].second };
 				LT::Add(lextable, ent);
 			}
-			else if (check(words[i].first, typeDeclare))
+			else if (check(words[i].first, typeSymbol))
 			{
-				LT::Entry ent = { LEX_DECLARE,  words[i].second };
+				LT::Entry ent = { LEX_SYMBOL,  words[i].second };
 				LT::Add(lextable, ent);
 			}
-			else if (check(words[i].first, typePrint))
+			else if (check(words[i].first, typeFn))
 			{
-				LT::Entry ent = { LEX_PRINT,  words[i].second };
+				LT::Entry ent = { LEX_FN,  words[i].second };
+				LT::Add(lextable, ent);
+			}
+			else if (check(words[i].first, typeAnnounce))
+			{
+				LT::Entry ent = { LEX_ANNOUNCE,  words[i].second };
+				LT::Add(lextable, ent);
+			}
+			else if (check(words[i].first, typeWrite))
+			{
+				LT::Entry ent = { LEX_WRITE,  words[i].second };
 				LT::Add(lextable, ent);
 			}
 			else if (check(words[i].first, typeReturn))
@@ -478,14 +498,14 @@ namespace  Flexer
 			{
 				LT::Entry ent = { LEX_LITERAL,  words[i].second };
 				LT::Add(lextable, ent);
-				valueOfSTR(lextable, idtable, i, words);
+				valueOfSYMB(lextable, idtable, i, words);
 
 			}
 			else if (check(words[i].first, typeNumbLiteral))
 			{
 				LT::Entry ent = { LEX_LITERAL,  words[i].second };
 				LT::Add(lextable, ent);
-				valueOfINT(lextable, idtable, i, words, indIdTab);
+				valueOfSMALL(lextable, idtable, i, words, indIdTab);
 			}
 			else if (check(words[i].first, typeRightBrace))
 			{
@@ -517,26 +537,6 @@ namespace  Flexer
 			else if (check(words[i].first, typeComma))
 			{
 				LT::Entry ent = { LEX_COMMA,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typePlus))
-			{
-				LT::Entry ent = { LEX_PLUS,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeMinus))
-			{
-				LT::Entry ent = { LEX_MINUS,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeMulti))
-			{
-				LT::Entry ent = { LEX_STAR,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeDel))
-			{
-				LT::Entry ent = { LEX_DIRSLASH,  words[i].second };
 				LT::Add(lextable, ent);
 			}
 			else if (check(words[i].first, typeEquals))
@@ -575,12 +575,12 @@ namespace  Flexer
 		for (int i = 0; i < idtable.size; i++) {
 			IT::Entry ent = IT::GetEntry(idtable, i);
 			cout <<setw(7) << setfill(' ') << ent.id << "  |  ";
-			if (ent.iddatatype == IT::INT)
+			if (ent.iddatatype == IT::SML)
 			{
-				cout <<setw(7)<<setfill(' ')<< "INT";
+				cout <<setw(7)<<setfill(' ')<< "SMALL";
 			}
 			else {
-				cout << setw(7) << setfill(' ') << "STR";
+				cout << setw(7) << setfill(' ') << "SYMBOL";
 			}
 			cout<<"  |  ";
 
@@ -598,19 +598,18 @@ namespace  Flexer
 
 			cout << "  |  " << setw(7) << setfill(' ') << ent.idxfirstLE << "  |  ";
 
-			if (ent.iddatatype == IT::INT)
+			if (ent.iddatatype == IT::SML)
 			{
 			
-				cout << setw(7) << setfill(' ') << ent.value.vint;
+				cout << setw(7) << setfill(' ') << ent.value.vsmall;
 				cout << "  |  ";
 			}
 			
 			else {
-				for (int j = 0; j < ent.value.vstr->len; j++)
-				{
-					cout << ent.value.vstr->str[j];
+				
+					cout << '\''<<ent.value.vsymbol<<'\'';
 						
-				}cout << "  |  ";
+				cout << "  |  ";
 			}
 			cout << '\n' << "--------------------------------------------------------" << '\n';
 		}*/
