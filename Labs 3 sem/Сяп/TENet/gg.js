@@ -30,6 +30,7 @@ const person={
     console.log(person);
     console.log(Object.keys(person));
     //6
+
     const a={};
     const b={key:"b"};
     const c={key:"c"};

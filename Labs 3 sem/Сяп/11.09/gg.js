@@ -25,10 +25,9 @@ class Task
     {
         return this._id;
     }
-
     changeStatus()
     {
-        this._status==state[0]?this._status=state[1]:this._status=state[0];
+       this._status = this._status === state[0] ? state[1] : state[0];
     }
 }
 
@@ -55,6 +54,7 @@ get name()
     Add(task)
     {
 this._list.push(task);
+this._status=state[1];
     }
     Delete(name)
     {
